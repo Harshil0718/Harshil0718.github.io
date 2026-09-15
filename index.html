@@ -1,296 +1,1044 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Harshil Dyavathi | Ocean Portfolio</title>
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css" />
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Harshil Dyavathi — Portfolio
+    </title>
+
+    <meta
+        name="description"
+        content="Harshil Dyavathi — AI, Machine Learning and Web Development Portfolio"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/style.css"
+    >
+
 </head>
+
+
 <body>
 
-  <!-- Interactive Water Ripple/Particle Background Canvas -->
-  <canvas id="bubble-canvas"></canvas>
 
-  <!-- Coastal Glows & Ambient Lighting -->
-  <div class="sun-glimmer"></div>
-  <div class="water-caustic"></div>
+<!-- =====================================================
+     THREE.JS INTRO
+===================================================== -->
 
-  <!-- Navigation Bar -->
-  <header class="glass-nav">
-    <a href="#" class="logo">
-      <i class="fa-solid fa-water"></i> Harshil<span>.D</span>
-    </a>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#contact" class="nav-cta">Connect</a></li>
-      </ul>
-    </nav>
-  </header>
+<section
+    id="intro"
+    class="intro"
+>
 
-  <!-- Hero Section -->
-  <main>
-    <section id="hero" class="hero-section">
-      <div class="hero-badge"><i class="fa-solid fa-compass fa-spin"></i> Exploring AI, ML & Web Architecture</div>
-      <h1 class="hero-title">
-        Hello, I'm <span class="gradient-text">Harshil Dyavathi</span>
-      </h1>
-      <p class="hero-tagline">
-        Aspiring Artificial Intelligence & Machine Learning professional engineering fluid software, intelligent models, and aesthetic digital experiences.
-      </p>
-      
-      <div class="hero-actions">
-        <a href="#projects" class="btn-ocean">
-          <span>Explore Projects</span>
-          <i class="fa-solid fa-arrow-trend-up"></i>
-        </a>
-        <a href="#contact" class="btn-shell">
-          <span>Get in Touch</span>
-          <i class="fa-regular fa-paper-plane"></i>
-        </a>
-      </div>
 
-      <div class="social-links-pill">
-        <a href="https://linkedin.com/in/harshil-dyavathi-93983628b" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="mailto:dyavathiharshil07@gmail.com" title="Email"><i class="fa-regular fa-envelope"></i></a>
-        <a href="tel:+917386425266" title="Phone"><i class="fa-solid fa-phone"></i></a>
-      </div>
-    </section>
+    <!-- Three.js canvas goes here -->
 
-    <!-- About Section -->
-    <section id="about" class="content-section">
-      <div class="glass-card about-card">
-        <div class="card-icon"><i class="fa-solid fa-anchor"></i></div>
-        <h2 class="section-title">About Me</h2>
-        <p class="section-desc">
-          I am an Artificial Intelligence & Machine Learning student driven by curiosity and problem-solving. My focus lies in designing practical systems that bridge intuitive frontend user interfaces with robust backend intelligence and real-time computer vision.
-        </p>
-        <div class="stats-row">
-          <div class="stat-item">
-            <span class="stat-number">3+</span>
-            <span class="stat-label">Core Projects</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number">AI/ML</span>
-            <span class="stat-label">Specialization</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number">4</span>
-            <span class="stat-label">Languages Known</span>
-          </div>
-        </div>
-      </div>
-    </section>
+    <canvas
+        id="three-canvas"
+    ></canvas>
 
-    <!-- Skills Section -->
-    <section id="skills" class="content-section">
-      <h2 class="section-heading">Technical & Core Skills</h2>
-      <div class="grid-2">
-        <div class="glass-card">
-          <div class="card-head">
-            <i class="fa-solid fa-code"></i>
-            <h3>Technical Toolkit</h3>
-          </div>
-          <div class="tags-container">
-            <span class="tag"><i class="fa-brands fa-python"></i> Python 3.11</span>
-            <span class="tag"><i class="fa-brands fa-js"></i> JavaScript</span>
-            <span class="tag"><i class="fa-brands fa-html5"></i> HTML5</span>
-            <span class="tag"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
-            <span class="tag"><i class="fa-brands fa-node-js"></i> Node.js</span>
-            <span class="tag"><i class="fa-solid fa-cubes"></i> Three.js</span>
-            <span class="tag"><i class="fa-solid fa-fire"></i> Firebase</span>
-            <span class="tag"><i class="fa-solid fa-chart-line"></i> Chart.js</span>
-            <span class="tag"><i class="fa-solid fa-brain"></i> Machine Learning</span>
-            <span class="tag"><i class="fa-solid fa-eye"></i> Computer Vision / Face Detection</span>
-          </div>
+
+
+    <!-- =================================================
+         REFERENCE STYLE UI
+    ================================================== -->
+
+    <div class="intro-ui">
+
+
+        <div class="system-info">
+
+
+            <div class="system-name">
+                PORTFOLIO SYSTEM / 01
+            </div>
+
+
+            <div class="system-status">
+
+                <span
+                    class="status-dot"
+                ></span>
+
+                <span id="system-status">
+                    INITIALIZING 3D SYSTEM...
+                </span>
+
+                <span class="blink-cursor"></span>
+
+            </div>
+
+
         </div>
 
-        <div class="glass-card">
-          <div class="card-head">
-            <i class="fa-solid fa-lightbulb"></i>
-            <h3>Behavioral & Core Aptitude</h3>
-          </div>
-          <div class="tags-container">
-            <span class="tag">Problem Solving</span>
-            <span class="tag">Analytical Thinking</span>
-            <span class="tag">Team Collaboration</span>
-            <span class="tag">Technical Communication</span>
-            <span class="tag">Adaptability & Rapid Learning</span>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="content-section">
-      <h2 class="section-heading">Featured Projects</h2>
-      <div class="project-grid">
 
-       <!-- Project 1 -->
-<div class="glass-card project-card">
-  <div class="project-badge">Full Stack & POS</div>
-  <h3 class="project-title">mPOS (Mobile Point of Sale)</h3>
-  <p class="project-summary">
-    A flexible, streamlined web application designed for fast order taking, table ticketing, and billing in restaurants. Features secure user authentication and an interactive dashboard.
-  </p>
-  <div class="project-tech">
-    <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Node.js</span>
-  </div>
-  <div class="project-future">
-    <small><strong>Upcoming:</strong> Payment gateway integration & automated end-of-day revenue reconciliation.</small>
-  </div>
-  <div class="project-links" style="margin-top: 1.2rem;">
-    <a href="https://m-pos-gamma.vercel.app/" target="_blank" class="btn-ocean" style="padding: 0.5rem 1.1rem; font-size: 0.85rem;">
-      <span>Live Demo</span>
-      <i class="fa-solid fa-arrow-up-right-from-square"></i>
-    </a>
-  </div>
-</div>
-      
+        <!-- Bottom progress -->
 
-      <!-- Project 2 -->
-<div class="glass-card project-card featured-highlight">
-  <div class="project-badge">AI + HealthTech</div>
-  <h3 class="project-title">Lunara - The Moon Within You</h3>
-  <p class="project-summary">
-    An intuitive women’s health tracking web application for cycle tracking and predictive daily wellness insights powered by conversational AI[cite: 1].
-  </p>
-  <div class="project-tech">
-    <span>Three.js</span><span>Chart.js</span><span>Gemini AI API</span><span>Firebase</span>
-  </div>
-  <div class="project-future">
-    <small><strong>Features:</strong> 3D visual dynamics, Firebase authentication, and generative health insights[cite: 1].</small>
-  </div>
-  <div class="project-links" style="margin-top: 1.2rem;">
-    <a href="https://lunara-weeb.vercel.app/" target="_blank" class="btn-ocean" style="padding: 0.5rem 1.1rem; font-size: 0.85rem;">
-      <span>Live Demo</span>
-      <i class="fa-solid fa-arrow-up-right-from-square"></i>
-    </a>
-  </div>
-</div>
+        <div class="assembly-ui">
 
-        <!-- Project 3 -->
-        <div class="glass-card project-card">
-          <div class="project-badge">Computer Vision</div>
-          <h3 class="project-title">Real-Time Face Detection</h3>
-          <p class="project-summary">
-            Computer vision application that detects and tracks human faces in real-time camera streams with instant visual bounding boxes and identity recognition.
-          </p>
-          <div class="project-tech">
-            <span>Python 3.11</span><span>OpenCV / Vision Modules</span>
-          </div>
-          <div class="project-future">
-            <small><strong>Upcoming:</strong> Large-scale vectorized database integration for enterprise recognition.</small>
-          </div>
+
+            <div class="progress-track">
+
+                <div
+                    id="assembly-progress"
+                    class="progress-fill"
+                ></div>
+
+            </div>
+
+
+            <div
+                id="assembly-label"
+                class="assembly-label"
+            >
+                ASSEMBLING LAPTOP · 000%
+            </div>
+
+
         </div>
 
-      </div>
-    </section>
 
-    <!-- Education Section -->
-    <section id="education" class="content-section">
-      <h2 class="section-heading">Academic Timeline</h2>
-      <div class="timeline">
-        
-        <div class="timeline-item glass-card">
-          <div class="timeline-dot"></div>
-          <span class="timeline-date">2023 - Expected 07/2027</span>
-          <h4>Bachelor of Engineering – Artificial Intelligence & Machine Learning</h4>
-          <p class="institute">Methodist College of Engineering and Technology, Hyderabad, India</p>
-          <div class="grade-pill">Grade: 70%</div>
-        </div>
-
-        <div class="timeline-item glass-card">
-          <div class="timeline-dot"></div>
-          <span class="timeline-date">Intermediate Higher Secondary</span>
-          <h4>State Board of Intermediate Education</h4>
-          <p class="institute">Govt Junior College, Makloor, Nizamabad, India</p>
-          <div class="grade-pill">Percentage: 82.9%</div>
-        </div>
-
-        <div class="timeline-item glass-card">
-          <div class="timeline-dot"></div>
-          <span class="timeline-date">Secondary School Certificate (SSC)</span>
-          <h4>High School Graduation</h4>
-          <p class="institute">St. Francis De Sales High School, Nizamabad, India</p>
-          <div class="grade-pill">Score: 100%</div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Interests & Hobbies Section -->
-    <section class="content-section">
-      <div class="grid-2">
-        <div class="glass-card">
-          <h3><i class="fa-solid fa-compass-drafting"></i> Focus & Interests</h3>
-          <p class="desc-text">AI & Machine Learning, Python Systems, Cyber Security, Ethical Hacking, Business Analysis, Stock Market Analysis, Brand & Product Strategy.</p>
-        </div>
-        <div class="glass-card">
-          <h3><i class="fa-solid fa-umbrella-beach"></i> Beyond the Code</h3>
-          <p class="desc-text">Motorcycle Touring, Cinematography, Still Photography, Gaming, Sports & Fitness, Music & Movies.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="content-section contact-section">
-      <div class="glass-card text-center">
-        <h2>Drop an Anchor & Say Hello</h2>
-        <p>Looking for an enthusiastic AI & ML intern or software developer? Let's connect.</p>
-        <div class="contact-methods">
-          <a href="mailto:dyavathiharshil07@gmail.com" class="contact-chip">
-            <i class="fa-solid fa-envelope"></i> dyavathiharshil07@gmail.com
-          </a>
-          <a href="tel:+917386425266" class="contact-chip">
-            <i class="fa-solid fa-phone"></i> +91 7386425266
-          </a>
-          <a href="https://linkedin.com/in/harshil-dyavathi-93983628b" target="_blank" class="contact-chip">
-            <i class="fa-brands fa-linkedin"></i> Harshil Dyavathi
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Live Ocean Waves Animated Footer -->
-  <footer class="ocean-container">
-    <div class="wave-wrapper">
-      <!-- Wave Layer 1 (Deepest Ocean Current) -->
-      <svg class="waves wave-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none">
-        <defs>
-          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-        </defs>
-        <use href="#gentle-wave" x="48" y="0" fill="rgba(12, 74, 110, 0.4)" />
-      </svg>
-      <!-- Wave Layer 2 (Mid-tide) -->
-      <svg class="waves wave-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none">
-        <use href="#gentle-wave" x="48" y="3" fill="rgba(14, 116, 144, 0.5)" />
-      </svg>
-      <!-- Wave Layer 3 (Turquoise Surge) -->
-      <svg class="waves wave-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none">
-        <use href="#gentle-wave" x="48" y="5" fill="rgba(6, 182, 212, 0.4)" />
-      </svg>
-      <!-- Wave Layer 4 (Foam Crest) -->
-      <svg class="waves wave-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none">
-        <use href="#gentle-wave" x="48" y="7" fill="rgba(240, 253, 250, 0.85)" />
-      </svg>
     </div>
 
-    <div class="beach-sand-floor">
-      <p>&copy; 2026 Harshil Dyavathi. Built with sea breezes, clean code & curiosity.</p>
-    </div>
-  </footer>
 
-  <script src="script.js"></script>
+
+    <!-- =================================================
+         LAPTOP SCREEN HTML
+         Positioned above WebGL canvas
+    ================================================== -->
+
+    <div
+        id="screen-ui"
+        class="screen-ui"
+    >
+
+
+        <div class="screen-system">
+            SYSTEM ONLINE
+        </div>
+
+
+        <div
+            id="welcome-text"
+            class="welcome-text"
+        >
+            Hi Welcome,
+        </div>
+
+
+        <div
+            id="portfolio-text"
+            class="portfolio-text"
+        >
+            This is
+            <span>
+                Harshil's
+            </span>
+            Portfolio
+        </div>
+
+
+        <button
+            id="enter-button"
+            class="enter-button"
+        >
+
+            CLICK ENTER TO PROCEED
+
+            <span>
+                →
+            </span>
+
+        </button>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         MAIN PORTFOLIO
+    ================================================== -->
+
+</section>
+
+
+
+<main
+    id="portfolio"
+    class="portfolio"
+>
+
+
+    <!-- =================================================
+         NAVIGATION
+    ================================================== -->
+
+    <header class="navbar">
+
+
+        <a
+            href="#home"
+            class="logo"
+        >
+            HD<span>.</span>
+        </a>
+
+
+        <nav>
+
+            <a href="#about">
+                ABOUT
+            </a>
+
+            <a href="#skills">
+                SKILLS
+            </a>
+
+            <a href="#projects">
+                PROJECTS
+            </a>
+
+            <a href="#education">
+                EDUCATION
+            </a>
+
+            <a href="#contact">
+                CONTACT
+            </a>
+
+        </nav>
+
+
+        <a
+            href="/Harshil-Resume.pdf"
+            download
+            class="resume-button"
+        >
+            ↓ RESUME
+        </a>
+
+
+    </header>
+
+
+
+    <!-- =================================================
+         HERO
+    ================================================== -->
+
+    <section
+        id="home"
+        class="hero wave-section"
+    >
+
+
+        <div class="hero-background"></div>
+
+
+        <div class="hero-content">
+
+
+            <div class="section-label">
+                01 / INTRODUCTION
+            </div>
+
+
+            <div class="availability">
+
+                <span></span>
+
+                AI & MACHINE LEARNING
+                — OPEN TO OPPORTUNITIES
+
+            </div>
+
+
+            <h1>
+
+                Harshil
+
+                <br>
+
+                <em>
+                    Dyavathi.
+                </em>
+
+            </h1>
+
+
+            <p>
+
+                Aspiring
+                <strong>
+                    Artificial Intelligence &
+                    Machine Learning
+                </strong>
+                professional building practical
+                digital solutions using Python,
+                web technologies and AI.
+
+            </p>
+
+
+            <div class="hero-social">
+
+
+                <a
+                    href="https://github.com/Harshil0718"
+                    target="_blank"
+                >
+                    GH
+                </a>
+
+
+                <a
+                    href="https://www.linkedin.com/in/harshil-dyavathi-93983628b/"
+                    target="_blank"
+                >
+                    in
+                </a>
+
+
+                <a
+                    href="mailto:dyavathiharshil07@gmail.com"
+                >
+                    @
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+        <div class="hero-side">
+
+            <span>
+                PYTHON
+            </span>
+
+            <span>
+                AI / ML
+            </span>
+
+            <span>
+                WEB DEVELOPMENT
+            </span>
+
+            <span>
+                HYDERABAD / INDIA
+            </span>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         ABOUT
+    ================================================== -->
+
+    <section
+        id="about"
+        class="about wave-section"
+    >
+
+
+        <div class="section-label">
+            02 / ABOUT
+        </div>
+
+
+        <div class="about-layout">
+
+
+            <h2>
+
+                Curious by nature.
+
+                <br>
+
+                <em>
+                    Builder by choice.
+                </em>
+
+            </h2>
+
+
+            <div class="about-copy">
+
+
+                <p>
+
+                    I'm an aspiring Artificial Intelligence
+                    & Machine Learning professional focused
+                    on turning ideas into useful,
+                    practical products.
+
+                </p>
+
+
+                <p>
+
+                    I enjoy working across Python,
+                    web development and emerging
+                    AI technologies.
+
+                </p>
+
+
+                <p>
+
+                    My approach is simple:
+
+                    understand the problem,
+                    build a clean solution,
+                    test it,
+                    and keep improving it.
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         SKILLS
+    ================================================== -->
+
+    <section
+        id="skills"
+        class="skills wave-section"
+    >
+
+
+        <div class="section-label">
+            03 / SKILLS
+        </div>
+
+
+        <h2>
+
+            Tools I use to
+
+            <br>
+
+            <em>
+                make things work.
+            </em>
+
+        </h2>
+
+
+        <div class="skills-grid">
+
+
+            <div class="skill-card">
+
+                <small>
+                    01
+                </small>
+
+                <h3>
+                    Python
+                </h3>
+
+                <p>
+                    Programming,
+                    automation and AI/ML
+                    experimentation.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <small>
+                    02
+                </small>
+
+                <h3>
+                    Web Development
+                </h3>
+
+                <p>
+                    HTML, CSS,
+                    JavaScript and
+                    modern interfaces.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <small>
+                    03
+                </small>
+
+                <h3>
+                    AI / ML
+                </h3>
+
+                <p>
+                    Machine learning
+                    concepts and
+                    practical projects.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <small>
+                    04
+                </small>
+
+                <h3>
+                    Problem Solving
+                </h3>
+
+                <p>
+                    Analytical thinking,
+                    teamwork and
+                    communication.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         PROJECTS
+    ================================================== -->
+
+    <section
+        id="projects"
+        class="projects wave-section"
+    >
+
+
+        <div class="section-label">
+            04 / PROJECTS
+        </div>
+
+
+        <div class="projects-header">
+
+
+            <h2>
+
+                Selected
+
+                <br>
+
+                <em>
+                    projects.
+                </em>
+
+            </h2>
+
+
+            <p>
+
+                A selection of projects from
+                my development journey,
+                covering web applications,
+                AI and computer vision.
+
+            </p>
+
+
+        </div>
+
+
+
+        <!-- MPOS -->
+
+        <article class="project">
+
+
+            <div class="project-number">
+                01
+            </div>
+
+
+            <div class="project-content">
+
+
+                <div class="project-title">
+
+
+                    <div>
+
+                        <small>
+                            MOBILE POINT OF SALE
+                        </small>
+
+                        <h3>
+                            mPOS
+                        </h3>
+
+                    </div>
+
+
+                    <a
+                        href="https://m-pos-gamma.vercel.app/"
+                        target="_blank"
+                        class="project-arrow"
+                    >
+                        ↗
+                    </a>
+
+
+                </div>
+
+
+                <p>
+
+                    A web application for flexible
+                    restaurant order taking and billing,
+                    with user authentication and a
+                    simple dashboard.
+
+                </p>
+
+
+                <div class="tags">
+
+                    <span>
+                        HTML
+                    </span>
+
+                    <span>
+                        CSS
+                    </span>
+
+                    <span>
+                        JavaScript
+                    </span>
+
+                    <span>
+                        Node.js
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </article>
+
+
+
+        <!-- LUNARA -->
+
+        <article class="project">
+
+
+            <div class="project-number">
+                02
+            </div>
+
+
+            <div class="project-content">
+
+
+                <div class="project-title">
+
+
+                    <div>
+
+                        <small>
+                            THE MOON WITHIN YOU
+                        </small>
+
+                        <h3>
+                            Lunara
+                        </h3>
+
+                    </div>
+
+
+                    <a
+                        href="https://lunara-weeb.vercel.app/"
+                        target="_blank"
+                        class="project-arrow"
+                    >
+                        ↗
+                    </a>
+
+
+                </div>
+
+
+                <p>
+
+                    A women-focused web application
+                    for menstrual cycle tracking
+                    with additional daily insights
+                    based on user inputs.
+
+                </p>
+
+
+                <div class="tags">
+
+                    <span>
+                        HTML5
+                    </span>
+
+                    <span>
+                        CSS3
+                    </span>
+
+                    <span>
+                        JavaScript
+                    </span>
+
+                    <span>
+                        Three.js
+                    </span>
+
+                    <span>
+                        Chart.js
+                    </span>
+
+                    <span>
+                        Gemini AI
+                    </span>
+
+                    <span>
+                        Firebase
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </article>
+
+
+
+        <!-- FACE DETECTION -->
+
+        <article class="project">
+
+
+            <div class="project-number">
+                03
+            </div>
+
+
+            <div class="project-content">
+
+
+                <div class="project-title">
+
+
+                    <div>
+
+                        <small>
+                            COMPUTER VISION
+                        </small>
+
+                        <h3>
+                            Real-Time Face Detection
+                        </h3>
+
+                    </div>
+
+
+                    <div class="project-arrow">
+                        ◎
+                    </div>
+
+
+                </div>
+
+
+                <p>
+
+                    A Python application that detects
+                    human faces through a camera
+                    and recognizes people in real time.
+
+                </p>
+
+
+                <div class="tags">
+
+                    <span>
+                        Python 3.11
+                    </span>
+
+                    <span>
+                        Computer Vision
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </article>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         EDUCATION
+    ================================================== -->
+
+    <section
+        id="education"
+        class="education wave-section"
+    >
+
+
+        <div class="section-label">
+            05 / EDUCATION
+        </div>
+
+
+        <div class="education-card">
+
+
+            <div class="education-date">
+
+                EXPECTED
+
+                <strong>
+                    07 / 2027
+                </strong>
+
+            </div>
+
+
+            <div>
+
+
+                <small>
+                    BACHELOR OF ENGINEERING
+                </small>
+
+
+                <h2>
+
+                    Artificial Intelligence
+
+                    <br>
+
+                    & Machine Learning
+
+                </h2>
+
+
+                <p>
+
+                    Methodist College of Engineering
+                    and Technology
+
+                    <br>
+
+                    Hyderabad, India
+
+                </p>
+
+
+            </div>
+
+
+            <div class="education-grade">
+
+                FINAL GRADE
+
+                <strong>
+                    70%
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         CONTACT
+    ================================================== -->
+
+    <section
+        id="contact"
+        class="contact wave-section"
+    >
+
+
+        <div>
+
+
+            <div class="section-label">
+                06 / CONTACT
+            </div>
+
+
+            <h2>
+
+                Let's build
+
+                <br>
+
+                <em>
+                    something useful.
+                </em>
+
+            </h2>
+
+
+            <p>
+
+                Open to internships,
+                collaborations and
+                interesting software projects.
+
+            </p>
+
+
+            <a
+                class="email"
+                href="mailto:dyavathiharshil07@gmail.com"
+            >
+
+                dyavathiharshil07@gmail.com
+
+                <span>
+                    ↗
+                </span>
+
+            </a>
+
+
+            <div class="contact-links">
+
+
+                <a
+                    href="https://github.com/Harshil0718"
+                    target="_blank"
+                >
+                    GITHUB
+                </a>
+
+
+                <a
+                    href="https://www.linkedin.com/in/harshil-dyavathi-93983628b/"
+                    target="_blank"
+                >
+                    LINKEDIN
+                </a>
+
+
+                <a
+                    href="/Harshil-Resume.pdf"
+                    download
+                >
+                    RESUME
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <span>
+            HARSHIL DYAVATHI
+        </span>
+
+        <span>
+            AI / ML • WEB • PYTHON
+        </span>
+
+        <span>
+            © 2026
+        </span>
+
+    </footer>
+
+
+</main>
+
+
+
+<script
+    type="module"
+    src="/main.js"
+></script>
+
+
 </body>
+
 </html>
