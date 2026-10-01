@@ -1,769 +1,843 @@
-/* =======================================================
-   PURE WHITE PALETTE & DESIGN TOKENS
-======================================================= */
-:root {
-  --bg-white: #ffffff;
-  --bg-subtle: #f8f9fa;
-  --card-white: #ffffff;
-  --text-dark: #0f1115;
-  --text-muted: #525866;
-  --text-light: #99a0ae;
-  --border-clean: #e5e7eb;
-  --wire-line: rgba(15, 17, 21, 0.08);
-
-  --font-display: 'Instrument Serif', Georgia, serif;
-  --font-main: 'Plus Jakarta Sans', -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
-  --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  background-color: var(--bg-white);
-  color: var(--text-dark);
-  font-family: var(--font-main);
-  scroll-behavior: smooth;
-}
-
-body {
-  overflow-x: hidden;
-  background-color: var(--bg-white);
-}
-
-/* Custom Cursor */
-#dot-cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 10px;
-  height: 10px;
-  background-color: var(--text-dark);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 99999;
-  transform: translate(-50%, -50%);
-  transition: width 0.15s, height 0.15s, background-color 0.15s;
-}
-
-/* =======================================================
-   PURE WHITE INTRO OVERLAY
-======================================================= */
-#intro-overlay {
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #ffffff;
-  z-index: 10000;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.8s;
-}
-
-#intro-overlay.hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-#intro-canvas-container {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-}
-
-/* Bottom Progress Bar */
-.intro-progress-bar {
-  position: absolute;
-  bottom: 2.8rem;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.6rem;
-  z-index: 10;
-  pointer-events: none;
-}
-
-.progress-track {
-  width: 320px;
-  height: 4px;
-  background: rgba(15, 17, 21, 0.1);
-  border-radius: 999px;
-  overflow: hidden;
-}
-
-.progress-fill {
-  width: 0%;
-  height: 100%;
-  background: #0f1115;
-  transition: width 0.1s linear;
-}
-
-.progress-info-row {
-  display: flex;
-  align-items: center;
-  gap: 0.9rem;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 1.5px;
-}
-
-.progress-stage {
-  color: #0f1115;
-  font-weight: 700;
-}
-
-.progress-text {
-  color: #6b7280;
-}
-
-/* =======================================================
-   WAVY WIREFRAME INTERACTIVE CANVAS (PURE WHITE BG)
-======================================================= */
-#wavy-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 0;
-  pointer-events: none;
-  background-color: var(--bg-white);
-}
-
-/* =======================================================
-   FLOATING ISLAND NAVBAR
-======================================================= */
-.island-nav-wrapper {
-  position: fixed;
-  top: 1.2rem;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  z-index: 1000;
-  pointer-events: none;
-}
-
-.island-nav {
-  pointer-events: auto;
-  display: flex;
-  align-items: center;
-  gap: 1.8rem;
-  padding: 0.4rem 0.6rem 0.4rem 0.8rem;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--border-clean);
-  border-radius: 999px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-}
-
-.nav-brand {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  text-decoration: none;
-  color: inherit;
-}
-
-.brand-avatar {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: var(--text-dark);
-  color: #fff;
-  font-size: 0.72rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.brand-name {
-  font-size: 0.88rem;
-  font-weight: 600;
-}
-
-.brand-dots {
-  color: var(--text-light);
-  font-size: 0.75rem;
-  letter-spacing: 1px;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 1.4rem;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: var(--text-muted);
-  font-size: 0.85rem;
-  font-weight: 500;
-  transition: var(--transition);
-}
-
-.nav-links a:hover {
-  color: var(--text-dark);
-}
-
-.nav-cta-btn {
-  background: var(--text-dark);
-  color: #fff !important;
-  padding: 0.4rem 1.1rem;
-  border-radius: 999px;
-  font-size: 0.82rem;
-  font-weight: 600;
-}
-
-.status-capsule {
-  pointer-events: auto;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 0.45rem 1rem;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
-  border: 1px solid var(--border-clean);
-  border-radius: 999px;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--text-dark);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-}
-
-.pulse-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background-color: var(--text-dark);
-}
-
-/* =======================================================
-   PAGE CONTAINER & SECTIONS
-======================================================= */
-.page-container {
-  position: relative;
-  z-index: 2;
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 7rem 2rem 5rem;
-}
-
-.content-section {
-  padding: 4.5rem 0;
-}
-
-.section-label {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  letter-spacing: 2px;
-  color: var(--text-muted);
-  display: block;
-  margin-bottom: 0.6rem;
-}
-
-.section-heading {
-  font-size: 2.5rem;
-  font-weight: 700;
-  letter-spacing: -0.5px;
-  margin-bottom: 2rem;
-}
-
-.section-subheading {
-  font-size: 1.35rem;
-  font-weight: 700;
-  margin-bottom: 0.8rem;
-}
-
-/* Pure White Card Containers */
-.white-card {
-  background: var(--card-white);
-  border: 1px solid var(--border-clean);
-  border-radius: 16px;
-  padding: 2.2rem;
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.03);
-  transition: var(--transition);
-}
-
-.white-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-  border-color: #cbd5e1;
-}
-
-/* Hero Section */
-.hero-section {
-  min-height: 75vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 4rem 0 3rem;
-}
-
-.hero-tag {
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-  letter-spacing: 2px;
-  color: var(--text-muted);
-  margin-bottom: 1.2rem;
-}
-
-.tag-accent {
-  color: var(--text-dark);
-  font-weight: 700;
-}
-
-.hero-title {
-  font-family: var(--font-display);
-  font-size: clamp(3.8rem, 7vw, 6.2rem);
-  line-height: 0.95;
-  font-weight: 400;
-  margin-bottom: 1.5rem;
-}
-
-.hero-subtitle {
-  font-size: 1.25rem;
-  color: var(--text-muted);
-  max-width: 680px;
-  line-height: 1.6;
-  margin-bottom: 2.2rem;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 1.2rem;
-  margin-bottom: 2.5rem;
-}
-
-.btn-primary-white, .btn-secondary-white {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 0.85rem 1.8rem;
-  border-radius: 50px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: var(--transition);
-}
-
-.btn-primary-white {
-  background: var(--text-dark);
-  color: #fff;
-}
-
-.btn-primary-white:hover {
-  background: #252830;
-  transform: translateY(-2px);
-}
-
-.btn-secondary-white {
-  background: var(--card-surface);
-  border: 1px solid var(--border-clean);
-  color: var(--text-dark);
-}
-
-.btn-secondary-white:hover {
-  background: var(--bg-subtle);
-  transform: translateY(-2px);
-}
-
-.social-pills-row {
-  display: flex;
-  gap: 1rem;
-}
-
-.social-pills-row a {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: var(--card-surface);
-  border: 1px solid var(--border-clean);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-muted);
-  text-decoration: none;
-  font-size: 1rem;
-  transition: var(--transition);
-}
-
-.social-pills-row a:hover {
-  color: var(--text-dark);
-  background: var(--bg-subtle);
-  transform: translateY(-2px);
-}
-
-/* Metrics Grid */
-.metrics-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  padding: 2.5rem 0;
-  border-top: 1px solid var(--border-clean);
-  border-bottom: 1px solid var(--border-clean);
-}
-
-.metric-box {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
-
-.metric-num {
-  font-family: var(--font-mono);
-  font-size: 2rem;
-  font-weight: 700;
-}
-
-.metric-label {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-}
-
-/* Two Column Layout */
-.two-col-layout {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 2.5rem;
-}
-
-.body-lead {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: var(--text-dark);
-  margin-bottom: 1rem;
-}
-
-.body-text {
-  font-size: 0.95rem;
-  line-height: 1.7;
-  color: var(--text-muted);
-}
-
-.clean-bullet-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.clean-bullet-list li {
-  display: flex;
-  gap: 0.8rem;
-  font-size: 0.95rem;
-  color: var(--text-muted);
-  line-height: 1.6;
-}
-
-.clean-bullet-list li i {
-  color: var(--text-dark);
-  margin-top: 0.25rem;
-}
-
-.personal-detail-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  margin-top: 1.2rem;
-}
-
-.personal-detail-pills span {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  background: var(--bg-subtle);
-  border: 1px solid var(--border-clean);
-  padding: 0.3rem 0.7rem;
-  border-radius: 6px;
-}
-
-/* Skills Cards */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.8rem;
-}
-
-.cat-tag {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  display: block;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.badge-cluster {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-}
-
-.tech-badge {
-  background: var(--bg-subtle);
-  border: 1px solid var(--border-clean);
-  padding: 0.5rem 0.9rem;
-  border-radius: 8px;
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  font-weight: 500;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-}
-
-/* Project Cards */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
-}
-
-.project-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.project-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1.2rem;
-}
-
-.proj-badge {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  background: var(--bg-subtle);
-  border: 1px solid var(--border-clean);
-  padding: 0.25rem 0.7rem;
-  border-radius: 6px;
-  font-weight: 600;
-}
-
-.badge-dark {
-  background: var(--text-dark);
-  color: #fff;
-  border-color: var(--text-dark);
-}
-
-.icon-link {
-  color: var(--text-muted);
-  font-size: 1.1rem;
-  transition: var(--transition);
-}
-
-.icon-link:hover {
-  color: var(--text-dark);
-}
-
-.icon-link.disabled {
-  opacity: 0.35;
-  cursor: not-allowed;
-}
-
-.proj-name {
-  font-size: 1.35rem;
-  font-weight: 700;
-  margin-bottom: 0.8rem;
-}
-
-.proj-desc {
-  font-size: 0.95rem;
-  color: var(--text-muted);
-  line-height: 1.6;
-  margin-bottom: 1.2rem;
-  flex-grow: 1;
-}
-
-.proj-tech {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-bottom: 1rem;
-}
-
-.proj-tech span {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  background: var(--bg-subtle);
-  border: 1px solid var(--border-clean);
-  padding: 0.2rem 0.55rem;
-  border-radius: 4px;
-  color: var(--text-muted);
-}
-
-.proj-future {
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  line-height: 1.5;
-  margin-bottom: 1.4rem;
-  border-top: 1px dashed var(--border-clean);
-  padding-top: 0.6rem;
-}
-
-.btn-demo-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 0.75rem 1.2rem;
-  border-radius: 8px;
-  background: var(--text-dark);
-  color: #fff;
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 600;
-  transition: var(--transition);
-}
-
-.btn-demo-link:hover {
-  background: #252830;
-}
-
-.status-wip-tag {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--text-muted);
-}
-
-/* Timeline */
-.timeline-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.timeline-card {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.timeline-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-}
-
-.t-date {
-  color: var(--text-muted);
-}
-
-.t-grade {
-  font-weight: 600;
-  background: var(--bg-subtle);
-  border: 1px solid var(--border-clean);
-  padding: 0.2rem 0.6rem;
-  border-radius: 4px;
-}
-
-.timeline-card h4 {
-  font-size: 1.25rem;
-}
-
-.t-inst {
-  font-size: 0.95rem;
-  color: var(--text-muted);
-}
-
-/* Contact Banner */
-.contact-card {
-  text-align: center;
-  padding: 4.5rem 2rem;
-}
-
-.contact-title {
-  font-size: 2.4rem;
-  letter-spacing: -0.5px;
-  margin-bottom: 0.8rem;
-}
-
-.contact-sub {
-  color: var(--text-muted);
-  font-size: 1.05rem;
-  margin-bottom: 2rem;
-}
-
-.contact-pills-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.contact-action-pill {
-  background: var(--bg-subtle);
-  border: 1px solid var(--border-clean);
-  padding: 0.85rem 1.6rem;
-  border-radius: 50px;
-  color: var(--text-dark);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.92rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  transition: var(--transition);
-}
-
-.contact-action-pill:hover {
-  background: var(--text-dark);
-  color: #fff;
-  transform: translateY(-2px);
-}
-
-/* Site Watermark Footer */
-.site-footer {
-  text-align: center;
-  padding: 5rem 2rem 2.5rem;
-  position: relative;
-  z-index: 2;
-}
-
-.giant-watermark-text {
-  font-family: var(--font-display);
-  font-size: clamp(4rem, 10vw, 9.5vw);
-  line-height: 0.85;
-  color: rgba(15, 17, 21, 0.05);
-  user-select: none;
-  white-space: nowrap;
-}
-
-.footer-legal-bar {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 3rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--border-clean);
-  font-size: 0.85rem;
-  color: var(--text-muted);
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .nav-links, .status-capsule { display: none; }
-  .two-col-layout { grid-template-columns: 1fr; }
-  .footer-legal-bar { flex-direction: column; gap: 0.5rem; text-align: center; }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harshil Dyavathi | Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div id="dot-cursor"></div>
+
+  <!-- INTRO STAGE OVERLAY -->
+  <div id="intro-overlay">
+    <div id="intro-canvas-container"></div>
+
+    <div class="intro-progress-bar">
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <div class="progress-info-row">
+        <span class="progress-stage" id="progressStage">ASSEMBLING</span>
+        <span class="progress-text" id="progressStatus">SLOTTING MOTHERBOARD &amp; MEMORY BUS...</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIVE WAVY TERRAIN WIREFRAME BACKGROUND -->
+  <canvas id="wavy-canvas"></canvas>
+
+  <!-- FLOATING ISLAND NAVBAR -->
+  <header class="island-nav-wrapper">
+    <div class="island-nav">
+      <a href="#hero" class="nav-brand">
+        <div class="brand-avatar">HD</div>
+        <span class="brand-name">Harshil Dyavathi</span>
+        <span class="brand-dots">•••</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#work">Projects</a>
+        <a href="#experience">Education</a>
+        <a href="#contact" class="nav-cta-btn">Connect</a>
+      </nav>
+    </div>
+
+    <div class="status-capsule">
+      <span class="pulse-dot"></span>
+      <span>AI / ML Online</span>
+    </div>
+  </header>
+
+  <!-- MAIN PORTFOLIO PAGE -->
+  <main class="page-container" id="pageContent">
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="hero-tag">
+        <span class="tag-accent">//</span> ARTIFICIAL INTELLIGENCE &amp; MACHINE LEARNING
+      </div>
+      <h1 class="hero-title">
+        Harshil<br>Dyavathi.
+      </h1>
+      <p class="hero-subtitle">
+        Aspiring Artificial Intelligence &amp; Machine Learning professional with foundational knowledge of Python and machine learning concepts. Committed to developing innovative solutions through practical projects and continuous learning.
+      </p>
+      
+      <div class="hero-actions">
+        <a href="#work" class="btn-primary-white">
+          <span>Explore Projects</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a href="#contact" class="btn-secondary-white">
+          <span>Get in Touch</span>
+          <i class="fa-regular fa-envelope"></i>
+        </a>
+      </div>
+
+      <div class="social-pills-row">
+        <a href="https://linkedin.com/in/harshil-dyavathi-93983628b" target="_blank" rel="noopener" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="mailto:dyavathiharshil07@gmail.com" title="Email"><i class="fa-regular fa-envelope"></i></a>
+        <a href="tel:+917386425266" title="Phone"><i class="fa-solid fa-phone"></i></a>
+      </div>
+    </section>
+
+    <!-- Metrics Bar -->
+    <section class="metrics-grid">
+      <div class="metric-box">
+        <span class="metric-num">3+</span>
+        <span class="metric-label">Key Projects Built</span>
+      </div>
+      <div class="metric-box">
+        <span class="metric-num">AIML</span>
+        <span class="metric-label">Specialization Track</span>
+      </div>
+      <div class="metric-box">
+        <span class="metric-num">100%</span>
+        <span class="metric-label">High School Score</span>
+      </div>
+      <div class="metric-box">
+        <span class="metric-num">4</span>
+        <span class="metric-label">Languages Known</span>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="content-section" id="about">
+      <span class="section-label">01 // PROFILE</span>
+      <h2 class="section-heading">Professional Overview.</h2>
+      
+      <div class="two-col-layout">
+        <div class="white-card bio-card">
+          <p class="body-lead">
+            Strong problem-solving, analytical, and communication skills, with quick adaptability to new technologies. Seeking internships to apply technical expertise and advance in AI and software development.
+          </p>
+          <p class="body-text">
+            Committed to building scalable software that bridges intelligent backend architectures with responsive frontend interfaces and real-time computer vision.
+          </p>
+        </div>
+
+        <div class="white-card strengths-card">
+          <h3>Behavioral Strengths</h3>
+          <ul class="clean-bullet-list">
+            <li><i class="fa-solid fa-check"></i> <strong>Problem Solving:</strong> Structured debugging and root-cause algorithmic optimization.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Analytical Thinking:</strong> Systematic evaluation of system pipelines and architectures.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Team Collaboration:</strong> Clear cross-functional technical communication.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Communication Skills:</strong> Technical documentation and collaborative planning.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="content-section" id="skills">
+      <span class="section-label">02 // ARSENAL</span>
+      <h2 class="section-heading">Technical Skills &amp; Stack.</h2>
+
+      <div class="skills-grid">
+        <div class="white-card skill-cat-card">
+          <span class="cat-tag">Languages</span>
+          <div class="badge-cluster">
+            <span class="tech-badge"><i class="fa-brands fa-python"></i> Python 3.11</span>
+            <span class="tech-badge"><i class="fa-brands fa-js"></i> JavaScript</span>
+            <span class="tech-badge"><i class="fa-brands fa-html5"></i> HTML5</span>
+            <span class="tech-badge"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+          </div>
+        </div>
+
+        <div class="white-card skill-cat-card">
+          <span class="cat-tag">Frameworks &amp; Web</span>
+          <div class="badge-cluster">
+            <span class="tech-badge"><i class="fa-brands fa-node-js"></i> Node.js</span>
+            <span class="tech-badge"><i class="fa-solid fa-cube"></i> Three.js</span>
+            <span class="tech-badge"><i class="fa-solid fa-fire"></i> Firebase</span>
+            <span class="tech-badge"><i class="fa-solid fa-chart-line"></i> Chart.js</span>
+          </div>
+        </div>
+
+        <div class="white-card skill-cat-card">
+          <span class="cat-tag">AI &amp; Computer Vision</span>
+          <div class="badge-cluster">
+            <span class="tech-badge"><i class="fa-solid fa-brain"></i> Machine Learning</span>
+            <span class="tech-badge"><i class="fa-solid fa-eye"></i> Real-Time Detection</span>
+            <span class="tech-badge"><i class="fa-solid fa-camera"></i> Face Recognition</span>
+            <span class="tech-badge"><i class="fa-solid fa-bolt"></i> Gemini AI API</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="content-section" id="work">
+      <span class="section-label">03 // PROJECT EXPERIENCE</span>
+      <h2 class="section-heading">Featured Systems.</h2>
+
+      <div class="projects-grid">
+        <!-- Project 1: mPOS -->
+        <article class="white-card project-box">
+          <div class="project-header">
+            <span class="proj-badge">Full-Stack Web App</span>
+            <a href="https://m-pos-gamma.vercel.app/" target="_blank" rel="noopener" class="icon-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+          <h3 class="proj-name">1. mPOS (Mobile Point of Sale)</h3>
+          <p class="proj-desc">
+            Built a web-app used for flexible handling of order taking and billing at restaurants. Implemented user authentication and an interactive dashboard.
+          </p>
+          <div class="proj-tech">
+            <span>HTML</span><span>CSS</span><span>Node.js</span><span>JavaScript</span>
+          </div>
+          <div class="proj-future">
+            <small><strong>Future Enhancements:</strong> Automating order taking, payment gateway integration, reducing complexity of tallying daily revenue.</small>
+          </div>
+          <div class="proj-footer">
+            <a href="https://m-pos-gamma.vercel.app/" target="_blank" rel="noopener" class="btn-demo-link">
+              Launch Live App <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 2: Lunara -->
+        <article class="white-card project-box featured-project">
+          <div class="project-header">
+            <span class="proj-badge badge-dark">AI + HealthTech</span>
+            <a href="https://lunara-weeb.vercel.app/" target="_blank" rel="noopener" class="icon-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+          <h3 class="proj-name">2. Lunara — The Moon Within You</h3>
+          <p class="proj-desc">
+            Built a web-app for women to track their menstrual cycle with additional info about their daily insights based on their inputs. Designed an intuitive user interface for easy status monitoring.
+          </p>
+          <div class="proj-tech">
+            <span>Three.js</span><span>Chart.js</span><span>Gemini AI API</span><span>Firebase</span>
+          </div>
+          <div class="proj-future">
+            <small><strong>Architecture:</strong> Three.js 3D dynamics, Gemini AI integration, and Firebase authentication &amp; data storage.</small>
+          </div>
+          <div class="proj-footer">
+            <a href="https://lunara-weeb.vercel.app/" target="_blank" rel="noopener" class="btn-demo-link">
+              Launch Live App <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 3: Real-Time Face Detection -->
+        <article class="white-card project-box">
+          <div class="project-header">
+            <span class="proj-badge">Computer Vision</span>
+            <span class="icon-link disabled"><i class="fa-solid fa-code"></i></span>
+          </div>
+          <h3 class="proj-name">3. Real-Time Face Detection</h3>
+          <p class="proj-desc">
+            Developed an application that detects human faces in video camera streams and recognizes individuals in real time.
+          </p>
+          <div class="proj-tech">
+            <span>Python 3.11</span><span>OpenCV</span>
+          </div>
+          <div class="proj-future">
+            <small><strong>Future Enhancement:</strong> Integrating with a large-scale database to solve real-time issues.</small>
+          </div>
+          <div class="proj-footer">
+            <span class="status-wip-tag"><i class="fa-solid fa-database"></i> Database Hook Ongoing</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="content-section" id="experience">
+      <span class="section-label">04 // EDUCATION</span>
+      <h2 class="section-heading">Academic Timeline.</h2>
+
+      <div class="timeline-container">
+        <div class="white-card timeline-card">
+          <div class="timeline-meta">
+            <span class="t-date">Expected 07/2027</span>
+            <span class="t-grade">Grade: 70%</span>
+          </div>
+          <h4>Bachelor of Engineering — Artificial Intelligence &amp; Machine Learning</h4>
+          <p class="t-inst">Methodist College of Engineering and Technology, Hyderabad, India</p>
+        </div>
+
+        <div class="timeline-card white-card">
+          <div class="timeline-meta">
+            <span class="t-date">Intermediate Higher Secondary</span>
+            <span class="t-grade">Score: 82.9%</span>
+          </div>
+          <h4>Govt Junior College</h4>
+          <p class="t-inst">Makloor, Nizamabad, India</p>
+        </div>
+
+        <div class="timeline-card white-card">
+          <div class="timeline-meta">
+            <span class="t-date">Secondary School Certificate (SSC)</span>
+            <span class="t-grade">Score: 100%</span>
+          </div>
+          <h4>St. Francis De Sales High School</h4>
+          <p class="t-inst">Nizamabad, India</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interests & Hobbies -->
+    <section class="content-section" id="story">
+      <div class="two-col-layout">
+        <div class="white-card">
+          <span class="section-label">// INTERESTS</span>
+          <h3 class="section-subheading">Domain Focus</h3>
+          <p class="body-text">
+            AI &amp; Machine Learning, Python Programming, Ethical Hacking, Cyber Security, Business Analysis, Stock Market, Current Affairs, Business &amp; Marketing.
+          </p>
+        </div>
+
+        <div class="white-card">
+          <span class="section-label">// PERSONAL</span>
+          <h3 class="section-subheading">Beyond Code</h3>
+          <p class="body-text">
+            Motorcycle Touring, Cinematography, Still Photography, Gaming, Sports &amp; Fitness, Music, Watching Movies.
+          </p>
+          <div class="personal-detail-pills">
+            <span>Telugu (C2)</span>
+            <span>Hindi (B2)</span>
+            <span>English (B2)</span>
+            <span>German (A2)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+      <div class="white-card contact-card">
+        <span class="section-label">05 // CONNECT</span>
+        <h2 class="contact-title">Let’s build something impactful.</h2>
+        <p class="contact-sub">Seeking internships to apply technical expertise and advance in AI and software development.</p>
+        
+        <div class="contact-pills-row">
+          <a href="mailto:dyavathiharshil07@gmail.com" class="contact-action-pill">
+            <i class="fa-regular fa-envelope"></i> dyavathiharshil07@gmail.com
+          </a>
+          <a href="tel:+917386425266" class="contact-action-pill">
+            <i class="fa-solid fa-phone"></i> +91 7386425266
+          </a>
+          <a href="https://linkedin.com/in/harshil-dyavathi-93983628b" target="_blank" rel="noopener" class="contact-action-pill">
+            <i class="fa-brands fa-linkedin-in"></i> Harshil Dyavathi
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Giant Footer -->
+  <footer class="site-footer">
+    <div class="giant-watermark-text">
+      HARSHIL DYAVATHI
+    </div>
+    <div class="footer-legal-bar">
+      <span>&copy; 2026 Harshil Dyavathi. All rights reserved.</span>
+      <span>Designed with clean code and high-contrast white aesthetic.</span>
+    </div>
+  </footer>
+
+  <script>
+    /* =======================================================
+       1. SPRING-DAMPED CURSOR
+    ======================================================= */
+    const dotCursor = document.getElementById('dot-cursor');
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let curX = mouseX;
+    let curY = mouseY;
+
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+
+    function updateCursor() {
+      curX += (mouseX - curX) * 0.2;
+      curY += (mouseY - curY) * 0.2;
+      dotCursor.style.left = `${curX}px`;
+      dotCursor.style.top = `${curY}px`;
+      requestAnimationFrame(updateCursor);
+    }
+    updateCursor();
+
+    /* =======================================================
+       2. THREE.JS DETAILED ASSEMBLY WITH REALISTIC 3D SCREEN
+    ======================================================= */
+    const introContainer = document.getElementById('intro-canvas-container');
+    const introOverlay = document.getElementById('intro-overlay');
+    const progressFill = document.getElementById('progressFill');
+    const progressStatus = document.getElementById('progressStatus');
+    const progressStage = document.getElementById('progressStage');
+
+    const introScene = new THREE.Scene();
+    introScene.background = new THREE.Color(0xffffff);
+
+    const introCamera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.1, 1000);
+    introCamera.position.set(0, 0.4, 7.8);
+
+    const introRenderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+    introRenderer.setSize(window.innerWidth, window.innerHeight);
+    introRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    introRenderer.shadowMap.enabled = true;
+    introContainer.appendChild(introRenderer.domElement);
+
+    // Studio Lighting
+    const ambientLight = new THREE.AmbientLight(0xffffff, 1.15);
+    introScene.add(ambientLight);
+
+    const mainLight = new THREE.DirectionalLight(0xffffff, 1.25);
+    mainLight.position.set(6, 14, 10);
+    introScene.add(mainLight);
+
+    const rimLight = new THREE.DirectionalLight(0xd9e2ec, 0.6);
+    rimLight.position.set(-8, -4, 4);
+    introScene.add(rimLight);
+
+    // Master Hierarchy
+    const laptopRig = new THREE.Group();
+    laptopRig.position.set(0, -0.2, 0);
+    introScene.add(laptopRig);
+
+    // Base Group (stays horizontal)
+    const baseGroup = new THREE.Group();
+    laptopRig.add(baseGroup);
+
+    // Lid Pivot Group (hinged at the back edge of the base)
+    const lidPivot = new THREE.Group();
+    lidPivot.position.set(0, 0.06, -1.15); // Pinned precisely to rear edge
+    laptopRig.add(lidPivot);
+
+    // Materials
+    const chassisMat = new THREE.MeshStandardMaterial({ color: 0x121417, roughness: 0.25, metalness: 0.85 });
+    const deckMat = new THREE.MeshStandardMaterial({ color: 0x090a0d, roughness: 0.4, metalness: 0.5 });
+    const keyMat = new THREE.MeshStandardMaterial({ color: 0x1c1f24, roughness: 0.5 });
+    const pcbMat = new THREE.MeshStandardMaterial({ color: 0x0d3822, roughness: 0.5 });
+    const ramPcbMat = new THREE.MeshStandardMaterial({ color: 0x124a2c, roughness: 0.4, metalness: 0.3 });
+    const chipMat = new THREE.MeshStandardMaterial({ color: 0x050505, roughness: 0.2, metalness: 0.6 });
+    const goldMat = new THREE.MeshStandardMaterial({ color: 0xd4af37, roughness: 0.3, metalness: 0.9 });
+
+    /* =======================================================
+       2D CANVAS TEXTURE (TYPEWRITER ON SCREEN)
+    ======================================================= */
+    const sCanvas = document.createElement('canvas');
+    sCanvas.width = 1024;
+    sCanvas.height = 640;
+    const sCtx = sCanvas.getContext('2d');
+
+    const sTexture = new THREE.CanvasTexture(sCanvas);
+    sTexture.minFilter = THREE.LinearFilter;
+
+    // MeshBasicMaterial ensures pure white glow and zero culling/shading bugs
+    const screenDisplayMat = new THREE.MeshBasicMaterial({
+      map: sTexture,
+      side: THREE.FrontSide
+    });
+
+    let screenState = 'off';
+    const fullText = "Hi Welcome,\nThis is Harshil's Portfolio.\nClick Enter";
+    let typedCount = 0;
+
+    function updateScreenTexture() {
+      // Pure white display panel
+      sCtx.fillStyle = '#ffffff';
+      sCtx.fillRect(0, 0, sCanvas.width, sCanvas.height);
+
+      // Clean border bezel
+      sCtx.strokeStyle = '#e2e8f0';
+      sCtx.lineWidth = 14;
+      sCtx.strokeRect(0, 0, sCanvas.width, sCanvas.height);
+
+      if (screenState === 'off') {
+        sTexture.needsUpdate = true;
+        return;
+      }
+
+      if (screenState === 'name') {
+        sCtx.textAlign = 'center';
+        sCtx.fillStyle = '#0f1115';
+        sCtx.font = '82px Plus Jakarta Sans, sans-serif';
+        sCtx.fillText('HARSHIL DYAVATHI', 512, 340);
+        sTexture.needsUpdate = true;
+        return;
+      }
+
+      // Typewriter mode
+      const current = fullText.slice(0, typedCount);
+      const lines = current.split('\n');
+
+      sCtx.textAlign = 'center';
+      sCtx.fillStyle = '#0f1115';
+
+      if (lines[0]) {
+        sCtx.font = '72px Plus Jakarta Sans, sans-serif';
+        sCtx.fillText(lines[0], 512, 220);
+      }
+      if (lines[1]) {
+        sCtx.font = '40px Instrument Serif, serif';
+        sCtx.fillStyle = '#374151';
+        sCtx.fillText(lines[1], 320, 320);
+      }
+      if (lines[2]) {
+        sCtx.font = '26px JetBrains Mono, monospace';
+        sCtx.fillStyle = '#0f1115';
+        sCtx.fillText(lines[2], 512, 440);
+      }
+
+      sTexture.needsUpdate = true;
+    }
+    updateScreenTexture();
+
+    /* =======================================================
+       HARDWARE MESH PIECES WITH STAGED TARGETS
+    ======================================================= */
+    const animatedParts = [];
+
+    function addAssemblyPart(mesh, parent, targetPos, targetRot, scatterPos, scatterRot, startThreshold, endThreshold) {
+      mesh.position.copy(scatterPos);
+      mesh.rotation.set(scatterRot.x, scatterRot.y, scatterRot.z);
+      parent.add(mesh);
+
+      animatedParts.push({
+        mesh,
+        targetPos,
+        targetRot,
+        scatterPos,
+        scatterRot,
+        startThreshold,
+        endThreshold
+      });
+    }
+
+    // 1. Bottom Aluminum Chassis Tub
+    const bottomTub = new THREE.Mesh(new THREE.BoxGeometry(3.5, 0.08, 2.3), chassisMat);
+    addAssemblyPart(
+      bottomTub,
+      baseGroup,
+      new THREE.Vector3(0, -0.04, 0),
+      new THREE.Vector3(0, 0, 0),
+      new THREE.Vector3(0, -5, 0),
+      new THREE.Vector3(0.3, 0, 0),
+      0.0, 0.25
+    );
+
+    // 2. Motherboard with processor chip
+    const moboGroup = new THREE.Group();
+    const moboPlane = new THREE.Mesh(new THREE.BoxGeometry(3.0, 0.02, 1.9), pcbMat);
+    const cpuChip = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.03, 0.5), chipMat);
+    cpuChip.position.set(0.3, 0.015, -0.2);
+    moboGroup.add(moboPlane, cpuChip);
+
+    addAssemblyPart(
+      moboGroup,
+      baseGroup,
+      new THREE.Vector3(0, -0.01, 0),
+      new THREE.Vector3(0, 0, 0),
+      new THREE.Vector3(-4.5, -4, -3),
+      new THREE.Vector3(0.5, -0.5, 0.4),
+      0.15, 0.35
+    );
+
+    // 3. Dual RAM Sticks (DDR5)
+    for (let i = 0; i < 2; i++) {
+      const ramGroup = new THREE.Group();
+      const ramPcb = new THREE.Mesh(new THREE.BoxGeometry(0.7, 0.03, 0.22), ramPcbMat);
+      const ramGold = new THREE.Mesh(new THREE.BoxGeometry(0.68, 0.032, 0.04), goldMat);
+      ramGold.position.set(0, 0, -0.1);
+      ramGroup.add(ramPcb, ramGold);
+
+      addAssemblyPart(
+        ramGroup,
+        baseGroup,
+        new THREE.Vector3(-0.6, 0.015, -0.25 + i * 0.32),
+        new THREE.Vector3(0, 0, 0),
+        new THREE.Vector3(-5 + i * 2, 4, 3),
+        new THREE.Vector3(-1.2, 1.2, 0.5),
+        0.22 + i * 0.05, 0.45 + i * 0.05
+      );
+    }
+
+    // 4. M.2 NVMe SSD Storage with Gold Pin Connector
+    const ssdGroup = new THREE.Group();
+    const ssdBody = new THREE.Mesh(new THREE.BoxGeometry(0.85, 0.03, 0.28), chipMat);
+    const ssdGold = new THREE.Mesh(new THREE.BoxGeometry(0.12, 0.035, 0.24), goldMat);
+    ssdGold.position.set(-0.43, 0, 0);
+    ssdGroup.add(ssdBody, ssdGold);
+
+    addAssemblyPart(
+      ssdGroup,
+      baseGroup,
+      new THREE.Vector3(0.65, 0.015, -0.2),
+      new THREE.Vector3(0, 0, 0),
+      new THREE.Vector3(5, 3.5, 3),
+      new THREE.Vector3(0.8, -1.2, 0.4),
+      0.28, 0.48
+    );
+
+    // 5. Unibody Top Deck (Recessed Well)
+    const topDeck = new THREE.Mesh(new THREE.BoxGeometry(3.5, 0.04, 2.3), chassisMat);
+    addAssemblyPart(
+      topDeck,
+      baseGroup,
+      new THREE.Vector3(0, 0.02, 0),
+      new THREE.Vector3(0, 0, 0),
+      new THREE.Vector3(0, 4.5, 0),
+      new THREE.Vector3(-0.4, 0, 0),
+      0.35, 0.60
+    );
+
+    // 6. Trackpad Glass Plate
+    const trackpadMesh = new THREE.Mesh(new THREE.BoxGeometry(1.05, 0.02, 0.7), deckMat);
+    addAssemblyPart(
+      trackpadMesh,
+      baseGroup,
+      new THREE.Vector3(0, 0.041, 0.62),
+      new THREE.Vector3(0, 0, 0),
+      new THREE.Vector3(0, -3.5, 4.5),
+      new THREE.Vector3(0.3, 0.5, -0.4),
+      0.45, 0.68
+    );
+
+    // 7. Keyboard Grid Assembly (Realistic Keys Tray)
+    const kbGroup = new THREE.Group();
+    const kbBase = new THREE.Mesh(new THREE.BoxGeometry(2.8, 0.02, 1.25), deckMat);
+    kbGroup.add(kbBase);
+
+    for (let row = 0; row < 5; row++) {
+      for (let col = 0; col < 13; col++) {
+        const key = new THREE.Mesh(new THREE.BoxGeometry(0.16, 0.025, 0.18), keyMat);
+        key.position.set(-1.15 + col * 0.19, 0.015, -0.42 + row * 0.21);
+        kbGroup.add(key);
+      }
+    }
+
+    addAssemblyPart(
+      kbGroup,
+      baseGroup,
+      new THREE.Vector3(0, 0.041, -0.25),
+      new THREE.Vector3(0, 0, 0),
+      new THREE.Vector3(0, 5, 2.5),
+      new THREE.Vector3(-0.8, 0.4, 0.4),
+      0.50, 0.72
+    );
+
+    // 8. Steel Barrel Hinge (At Pivot Point)
+    const hingeMesh = new THREE.Mesh(new THREE.CylinderGeometry(0.065, 0.065, 3.1, 16), chassisMat);
+    hingeMesh.rotation.z = Math.PI / 2;
+    hingeMesh.position.set(0, 0, 0);
+    lidPivot.add(hingeMesh);
+
+    // 9. Display Lid Group
+    const lidGroup = new THREE.Group();
+    const lidShell = new THREE.Mesh(new THREE.BoxGeometry(3.5, 2.25, 0.06), chassisMat);
+    lidShell.position.set(0, 1.125, -0.03); // Shifted up from pivot
+
+    // The Pure White Display Screen Panel
+    const displayPanel = new THREE.Mesh(new THREE.PlaneGeometry(3.1, 1.95), screenDisplayMat);
+    displayPanel.position.set(0, 1.125, 0.005); // Clearly on the front face
+
+    lidGroup.add(lidShell, displayPanel);
+
+    // Assembly targets for the lid
+    addAssemblyPart(
+      lidGroup,
+      lidPivot,
+      new THREE.Vector3(0, 0, 0),
+      new THREE.Vector3(0, 0, 0),
+      new THREE.Vector3(4, 5, -5),
+      new THREE.Vector3(-1.2, 0.8, -0.5),
+      0.60, 0.88
+    );
+
+    // Assembly Progression State
+    let assemblyProgress = 0;
+    const assemblySpeed = 0.0028; // Smooth ~10s timeline
+    let assemblyDone = false;
+    let canProceed = false;
+
+    function stepAssembly() {
+      if (assemblyProgress < 1) {
+        assemblyProgress += assemblySpeed;
+        const pct = Math.min(100, Math.floor(assemblyProgress * 100));
+        progressFill.style.width = `${pct}%`;
+
+        // Dynamic Phase Updates
+        if (assemblyProgress < 0.25) {
+          progressStage.innerText = 'PHASE 1 / 5';
+          progressStatus.innerText = 'SLOTTING MOTHERBOARD & CHASSIS BASE...';
+        } else if (assemblyProgress < 0.50) {
+          progressStage.innerText = 'PHASE 2 / 5';
+          progressStatus.innerText = 'ATTACHING DUAL DDR5 RAM & NVME M.2 SSD...';
+        } else if (assemblyProgress < 0.70) {
+          progressStage.innerText = 'PHASE 3 / 5';
+          progressStatus.innerText = 'SECURING TOP DECK, KEYBOARD & TOUCHPAD...';
+        } else if (assemblyProgress < 0.88) {
+          progressStage.innerText = 'PHASE 4 / 5';
+          progressStatus.innerText = 'CONNECTING HINGE BARREL & DISPLAY HOUSING...';
+        } else {
+          progressStage.innerText = 'PHASE 5 / 5';
+          progressStatus.innerText = 'TILTING OPEN DISPLAY & POWERING SCREEN...';
+        }
+
+        // Interpolate Hardware Mesh Positions
+        animatedParts.forEach(p => {
+          if (assemblyProgress >= p.startThreshold) {
+            const localP = Math.min(1, (assemblyProgress - p.startThreshold) / (p.endThreshold - p.startThreshold));
+            const ease = 1 - Math.pow(1 - localP, 3);
+
+            p.mesh.position.lerpVectors(p.scatterPos, p.targetPos, ease);
+            p.mesh.rotation.x = THREE.MathUtils.lerp(p.scatterRot.x, p.targetRot.x, ease);
+            p.mesh.rotation.y = THREE.MathUtils.lerp(p.scatterRot.y, p.targetRot.y, ease);
+            p.mesh.rotation.z = THREE.MathUtils.lerp(p.scatterRot.z, p.targetRot.z, ease);
+          }
+        });
+
+        // Smoothly tilt lid open between 75% and 100%
+        if (assemblyProgress > 0.75) {
+          const openP = (assemblyProgress - 0.75) / 0.25;
+          // Smooth tilt back from 90° closed to -15° open (total 105° open angle)
+          lidPivot.rotation.x = THREE.MathUtils.lerp(1.57, -0.26, 1 - Math.pow(1 - openP, 3));
+        }
+      } else if (!assemblyDone) {
+        assemblyDone = true;
+        progressStage.innerText = 'ASSEMBLED';
+        progressStatus.innerText = 'DISPLAY ACTIVE. TYPEWRITER RUNNING...';
+
+        // Start Letter-by-Letter Typewriter on Screen
+        screenState = 'typing';
+        const typeInterval = setInterval(() => {
+          typedCount++;
+          updateScreenTexture();
+          if (typedCount >= fullText.length) {
+            clearInterval(typeInterval);
+            canProceed = true;
+            progressStage.innerText = 'READY';
+            progressStatus.innerText = 'CLICK SCREEN OR PRESS ENTER TO CONTINUE';
+          }
+        }, 45);
+      }
+    }
+
+    // 3D Render Loop with Interactive Cursor Parallax
+    function renderIntro() {
+      requestAnimationFrame(renderIntro);
+      stepAssembly();
+
+      if (assemblyDone) {
+        // Laptop reacts to cursor position in real time
+        const targetRotY = (mouseX / window.innerWidth - 0.5) * 0.45;
+        const targetRotX = 0.08 + (mouseY / window.innerHeight - 0.5) * 0.22;
+
+        laptopRig.rotation.y += (targetRotY - laptopRig.rotation.y) * 0.05;
+        laptopRig.rotation.x += (targetRotX - laptopRig.rotation.x) * 0.05;
+      } else {
+        laptopRig.rotation.y += 0.0018;
+      }
+
+      introRenderer.render(introScene, introCamera);
+    }
+    renderIntro();
+
+    // Camera Zoom-In Transition
+    function triggerEnterTransition() {
+      if (!canProceed) return;
+      canProceed = false;
+
+      // Screen flashes Harshil's Name
+      screenState = 'name';
+      updateScreenTexture();
+
+      let zoom = 0;
+      const zoomInterval = setInterval(() => {
+        zoom += 0.04;
+        introCamera.position.z -= 0.35;
+        introCamera.position.y += 0.02;
+        if (zoom >= 1) {
+          clearInterval(zoomInterval);
+          introOverlay.classList.add('hidden');
+        }
+      }, 16);
+    }
+
+    introContainer.addEventListener('click', triggerEnterTransition);
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') triggerEnterTransition();
+    });
+
+    /* =======================================================
+       3. INTERACTIVE WAVY TERRAIN WIREFRAME (PURE WHITE THEME)
+    ======================================================= */
+    const waveCanvas = document.getElementById('wavy-canvas');
+    const wCtx = waveCanvas.getContext('2d');
+
+    let wWidth, wHeight;
+    function resizeWaveCanvas() {
+      wWidth = waveCanvas.width = window.innerWidth;
+      wHeight = waveCanvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeWaveCanvas);
+    resizeWaveCanvas();
+
+    let waveOffset = 0;
+    function drawWaveGrid() {
+      wCtx.clearRect(0, 0, wWidth, wHeight);
+
+      const cols = 36;
+      const rows = 26;
+      const colSpacing = wWidth / cols;
+      const rowSpacing = wHeight / rows;
+
+      waveOffset += 0.018;
+
+      // Horizontal Wavy Lines
+      for (let r = 0; r <= rows; r++) {
+        wCtx.beginPath();
+        for (let c = 0; c <= cols; c++) {
+          const x = c * colSpacing;
+          const dist = Math.hypot(x - mouseX, r * rowSpacing - mouseY);
+          const ripple = Math.sin(dist * 0.02 - waveOffset * 2) * 8;
+          const y = r * rowSpacing + Math.sin(c * 0.3 + waveOffset + r * 0.2) * 12 + ripple;
+
+          if (c === 0) wCtx.moveTo(x, y);
+          else wCtx.lineTo(x, y);
+        }
+        wCtx.strokeStyle = 'rgba(15, 17, 21, 0.07)';
+        wCtx.lineWidth = 1;
+        wCtx.stroke();
+      }
+
+      // Vertical Connecting Lines
+      for (let c = 0; c <= cols; c += 2) {
+        wCtx.beginPath();
+        for (let r = 0; r <= rows; r++) {
+          const x = c * colSpacing;
+          const dist = Math.hypot(x - mouseX, r * rowSpacing - mouseY);
+          const ripple = Math.sin(dist * 0.02 - waveOffset * 2) * 8;
+          const y = r * rowSpacing + Math.sin(c * 0.3 + waveOffset + r * 0.2) * 12 + ripple;
+
+          if (r === 0) wCtx.moveTo(x, y);
+          else wCtx.lineTo(x, y);
+        }
+        wCtx.strokeStyle = 'rgba(15, 17, 21, 0.035)';
+        wCtx.lineWidth = 1;
+        wCtx.stroke();
+      }
+
+      requestAnimationFrame(drawWaveGrid);
+    }
+    drawWaveGrid();
+  </script>
+</body>
+</html>
