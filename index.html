@@ -1,843 +1,240 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Harshil Dyavathi | Portfolio</title>
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css" />
-
-  <!-- Three.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-</head>
-<body>
-
-  <!-- Custom Cursor -->
-  <div id="dot-cursor"></div>
-
-  <!-- INTRO STAGE OVERLAY -->
-  <div id="intro-overlay">
-    <div id="intro-canvas-container"></div>
-
-    <div class="intro-progress-bar">
-      <div class="progress-track">
-        <div class="progress-fill" id="progressFill"></div>
-      </div>
-      <div class="progress-info-row">
-        <span class="progress-stage" id="progressStage">ASSEMBLING</span>
-        <span class="progress-text" id="progressStatus">SLOTTING MOTHERBOARD &amp; MEMORY BUS...</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- LIVE WAVY TERRAIN WIREFRAME BACKGROUND -->
-  <canvas id="wavy-canvas"></canvas>
-
-  <!-- FLOATING ISLAND NAVBAR -->
-  <header class="island-nav-wrapper">
-    <div class="island-nav">
-      <a href="#hero" class="nav-brand">
-        <div class="brand-avatar">HD</div>
-        <span class="brand-name">Harshil Dyavathi</span>
-        <span class="brand-dots">•••</span>
-      </a>
-      <nav class="nav-links">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#work">Projects</a>
-        <a href="#experience">Education</a>
-        <a href="#contact" class="nav-cta-btn">Connect</a>
-      </nav>
-    </div>
-
-    <div class="status-capsule">
-      <span class="pulse-dot"></span>
-      <span>AI / ML Online</span>
-    </div>
-  </header>
-
-  <!-- MAIN PORTFOLIO PAGE -->
-  <main class="page-container" id="pageContent">
-
-    <!-- Hero Section -->
-    <section class="hero-section" id="hero">
-      <div class="hero-tag">
-        <span class="tag-accent">//</span> ARTIFICIAL INTELLIGENCE &amp; MACHINE LEARNING
-      </div>
-      <h1 class="hero-title">
-        Harshil<br>Dyavathi.
-      </h1>
-      <p class="hero-subtitle">
-        Aspiring Artificial Intelligence &amp; Machine Learning professional with foundational knowledge of Python and machine learning concepts. Committed to developing innovative solutions through practical projects and continuous learning.
-      </p>
-      
-      <div class="hero-actions">
-        <a href="#work" class="btn-primary-white">
-          <span>Explore Projects</span>
-          <i class="fa-solid fa-arrow-right"></i>
-        </a>
-        <a href="#contact" class="btn-secondary-white">
-          <span>Get in Touch</span>
-          <i class="fa-regular fa-envelope"></i>
-        </a>
-      </div>
-
-      <div class="social-pills-row">
-        <a href="https://linkedin.com/in/harshil-dyavathi-93983628b" target="_blank" rel="noopener" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="mailto:dyavathiharshil07@gmail.com" title="Email"><i class="fa-regular fa-envelope"></i></a>
-        <a href="tel:+917386425266" title="Phone"><i class="fa-solid fa-phone"></i></a>
-      </div>
-    </section>
-
-    <!-- Metrics Bar -->
-    <section class="metrics-grid">
-      <div class="metric-box">
-        <span class="metric-num">3+</span>
-        <span class="metric-label">Key Projects Built</span>
-      </div>
-      <div class="metric-box">
-        <span class="metric-num">AIML</span>
-        <span class="metric-label">Specialization Track</span>
-      </div>
-      <div class="metric-box">
-        <span class="metric-num">100%</span>
-        <span class="metric-label">High School Score</span>
-      </div>
-      <div class="metric-box">
-        <span class="metric-num">4</span>
-        <span class="metric-label">Languages Known</span>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="content-section" id="about">
-      <span class="section-label">01 // PROFILE</span>
-      <h2 class="section-heading">Professional Overview.</h2>
-      
-      <div class="two-col-layout">
-        <div class="white-card bio-card">
-          <p class="body-lead">
-            Strong problem-solving, analytical, and communication skills, with quick adaptability to new technologies. Seeking internships to apply technical expertise and advance in AI and software development.
-          </p>
-          <p class="body-text">
-            Committed to building scalable software that bridges intelligent backend architectures with responsive frontend interfaces and real-time computer vision.
-          </p>
-        </div>
-
-        <div class="white-card strengths-card">
-          <h3>Behavioral Strengths</h3>
-          <ul class="clean-bullet-list">
-            <li><i class="fa-solid fa-check"></i> <strong>Problem Solving:</strong> Structured debugging and root-cause algorithmic optimization.</li>
-            <li><i class="fa-solid fa-check"></i> <strong>Analytical Thinking:</strong> Systematic evaluation of system pipelines and architectures.</li>
-            <li><i class="fa-solid fa-check"></i> <strong>Team Collaboration:</strong> Clear cross-functional technical communication.</li>
-            <li><i class="fa-solid fa-check"></i> <strong>Communication Skills:</strong> Technical documentation and collaborative planning.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="content-section" id="skills">
-      <span class="section-label">02 // ARSENAL</span>
-      <h2 class="section-heading">Technical Skills &amp; Stack.</h2>
-
-      <div class="skills-grid">
-        <div class="white-card skill-cat-card">
-          <span class="cat-tag">Languages</span>
-          <div class="badge-cluster">
-            <span class="tech-badge"><i class="fa-brands fa-python"></i> Python 3.11</span>
-            <span class="tech-badge"><i class="fa-brands fa-js"></i> JavaScript</span>
-            <span class="tech-badge"><i class="fa-brands fa-html5"></i> HTML5</span>
-            <span class="tech-badge"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
-          </div>
-        </div>
-
-        <div class="white-card skill-cat-card">
-          <span class="cat-tag">Frameworks &amp; Web</span>
-          <div class="badge-cluster">
-            <span class="tech-badge"><i class="fa-brands fa-node-js"></i> Node.js</span>
-            <span class="tech-badge"><i class="fa-solid fa-cube"></i> Three.js</span>
-            <span class="tech-badge"><i class="fa-solid fa-fire"></i> Firebase</span>
-            <span class="tech-badge"><i class="fa-solid fa-chart-line"></i> Chart.js</span>
-          </div>
-        </div>
-
-        <div class="white-card skill-cat-card">
-          <span class="cat-tag">AI &amp; Computer Vision</span>
-          <div class="badge-cluster">
-            <span class="tech-badge"><i class="fa-solid fa-brain"></i> Machine Learning</span>
-            <span class="tech-badge"><i class="fa-solid fa-eye"></i> Real-Time Detection</span>
-            <span class="tech-badge"><i class="fa-solid fa-camera"></i> Face Recognition</span>
-            <span class="tech-badge"><i class="fa-solid fa-bolt"></i> Gemini AI API</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="content-section" id="work">
-      <span class="section-label">03 // PROJECT EXPERIENCE</span>
-      <h2 class="section-heading">Featured Systems.</h2>
-
-      <div class="projects-grid">
-        <!-- Project 1: mPOS -->
-        <article class="white-card project-box">
-          <div class="project-header">
-            <span class="proj-badge">Full-Stack Web App</span>
-            <a href="https://m-pos-gamma.vercel.app/" target="_blank" rel="noopener" class="icon-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-          </div>
-          <h3 class="proj-name">1. mPOS (Mobile Point of Sale)</h3>
-          <p class="proj-desc">
-            Built a web-app used for flexible handling of order taking and billing at restaurants. Implemented user authentication and an interactive dashboard.
-          </p>
-          <div class="proj-tech">
-            <span>HTML</span><span>CSS</span><span>Node.js</span><span>JavaScript</span>
-          </div>
-          <div class="proj-future">
-            <small><strong>Future Enhancements:</strong> Automating order taking, payment gateway integration, reducing complexity of tallying daily revenue.</small>
-          </div>
-          <div class="proj-footer">
-            <a href="https://m-pos-gamma.vercel.app/" target="_blank" rel="noopener" class="btn-demo-link">
-              Launch Live App <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </a>
-          </div>
-        </article>
-
-        <!-- Project 2: Lunara -->
-        <article class="white-card project-box featured-project">
-          <div class="project-header">
-            <span class="proj-badge badge-dark">AI + HealthTech</span>
-            <a href="https://lunara-weeb.vercel.app/" target="_blank" rel="noopener" class="icon-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-          </div>
-          <h3 class="proj-name">2. Lunara — The Moon Within You</h3>
-          <p class="proj-desc">
-            Built a web-app for women to track their menstrual cycle with additional info about their daily insights based on their inputs. Designed an intuitive user interface for easy status monitoring.
-          </p>
-          <div class="proj-tech">
-            <span>Three.js</span><span>Chart.js</span><span>Gemini AI API</span><span>Firebase</span>
-          </div>
-          <div class="proj-future">
-            <small><strong>Architecture:</strong> Three.js 3D dynamics, Gemini AI integration, and Firebase authentication &amp; data storage.</small>
-          </div>
-          <div class="proj-footer">
-            <a href="https://lunara-weeb.vercel.app/" target="_blank" rel="noopener" class="btn-demo-link">
-              Launch Live App <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </a>
-          </div>
-        </article>
-
-        <!-- Project 3: Real-Time Face Detection -->
-        <article class="white-card project-box">
-          <div class="project-header">
-            <span class="proj-badge">Computer Vision</span>
-            <span class="icon-link disabled"><i class="fa-solid fa-code"></i></span>
-          </div>
-          <h3 class="proj-name">3. Real-Time Face Detection</h3>
-          <p class="proj-desc">
-            Developed an application that detects human faces in video camera streams and recognizes individuals in real time.
-          </p>
-          <div class="proj-tech">
-            <span>Python 3.11</span><span>OpenCV</span>
-          </div>
-          <div class="proj-future">
-            <small><strong>Future Enhancement:</strong> Integrating with a large-scale database to solve real-time issues.</small>
-          </div>
-          <div class="proj-footer">
-            <span class="status-wip-tag"><i class="fa-solid fa-database"></i> Database Hook Ongoing</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Education Section -->
-    <section class="content-section" id="experience">
-      <span class="section-label">04 // EDUCATION</span>
-      <h2 class="section-heading">Academic Timeline.</h2>
-
-      <div class="timeline-container">
-        <div class="white-card timeline-card">
-          <div class="timeline-meta">
-            <span class="t-date">Expected 07/2027</span>
-            <span class="t-grade">Grade: 70%</span>
-          </div>
-          <h4>Bachelor of Engineering — Artificial Intelligence &amp; Machine Learning</h4>
-          <p class="t-inst">Methodist College of Engineering and Technology, Hyderabad, India</p>
-        </div>
-
-        <div class="timeline-card white-card">
-          <div class="timeline-meta">
-            <span class="t-date">Intermediate Higher Secondary</span>
-            <span class="t-grade">Score: 82.9%</span>
-          </div>
-          <h4>Govt Junior College</h4>
-          <p class="t-inst">Makloor, Nizamabad, India</p>
-        </div>
-
-        <div class="timeline-card white-card">
-          <div class="timeline-meta">
-            <span class="t-date">Secondary School Certificate (SSC)</span>
-            <span class="t-grade">Score: 100%</span>
-          </div>
-          <h4>St. Francis De Sales High School</h4>
-          <p class="t-inst">Nizamabad, India</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Interests & Hobbies -->
-    <section class="content-section" id="story">
-      <div class="two-col-layout">
-        <div class="white-card">
-          <span class="section-label">// INTERESTS</span>
-          <h3 class="section-subheading">Domain Focus</h3>
-          <p class="body-text">
-            AI &amp; Machine Learning, Python Programming, Ethical Hacking, Cyber Security, Business Analysis, Stock Market, Current Affairs, Business &amp; Marketing.
-          </p>
-        </div>
-
-        <div class="white-card">
-          <span class="section-label">// PERSONAL</span>
-          <h3 class="section-subheading">Beyond Code</h3>
-          <p class="body-text">
-            Motorcycle Touring, Cinematography, Still Photography, Gaming, Sports &amp; Fitness, Music, Watching Movies.
-          </p>
-          <div class="personal-detail-pills">
-            <span>Telugu (C2)</span>
-            <span>Hindi (B2)</span>
-            <span>English (B2)</span>
-            <span>German (A2)</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact-section" id="contact">
-      <div class="white-card contact-card">
-        <span class="section-label">05 // CONNECT</span>
-        <h2 class="contact-title">Let’s build something impactful.</h2>
-        <p class="contact-sub">Seeking internships to apply technical expertise and advance in AI and software development.</p>
-        
-        <div class="contact-pills-row">
-          <a href="mailto:dyavathiharshil07@gmail.com" class="contact-action-pill">
-            <i class="fa-regular fa-envelope"></i> dyavathiharshil07@gmail.com
-          </a>
-          <a href="tel:+917386425266" class="contact-action-pill">
-            <i class="fa-solid fa-phone"></i> +91 7386425266
-          </a>
-          <a href="https://linkedin.com/in/harshil-dyavathi-93983628b" target="_blank" rel="noopener" class="contact-action-pill">
-            <i class="fa-brands fa-linkedin-in"></i> Harshil Dyavathi
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Giant Footer -->
-  <footer class="site-footer">
-    <div class="giant-watermark-text">
-      HARSHIL DYAVATHI
-    </div>
-    <div class="footer-legal-bar">
-      <span>&copy; 2026 Harshil Dyavathi. All rights reserved.</span>
-      <span>Designed with clean code and high-contrast white aesthetic.</span>
-    </div>
-  </footer>
-
-  <script>
-    /* =======================================================
-       1. SPRING-DAMPED CURSOR
-    ======================================================= */
-    const dotCursor = document.getElementById('dot-cursor');
-    let mouseX = window.innerWidth / 2;
-    let mouseY = window.innerHeight / 2;
-    let curX = mouseX;
-    let curY = mouseY;
-
-    window.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-    });
-
-    function updateCursor() {
-      curX += (mouseX - curX) * 0.2;
-      curY += (mouseY - curY) * 0.2;
-      dotCursor.style.left = `${curX}px`;
-      dotCursor.style.top = `${curY}px`;
-      requestAnimationFrame(updateCursor);
-    }
-    updateCursor();
-
-    /* =======================================================
-       2. THREE.JS DETAILED ASSEMBLY WITH REALISTIC 3D SCREEN
-    ======================================================= */
-    const introContainer = document.getElementById('intro-canvas-container');
-    const introOverlay = document.getElementById('intro-overlay');
-    const progressFill = document.getElementById('progressFill');
-    const progressStatus = document.getElementById('progressStatus');
-    const progressStage = document.getElementById('progressStage');
-
-    const introScene = new THREE.Scene();
-    introScene.background = new THREE.Color(0xffffff);
-
-    const introCamera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.1, 1000);
-    introCamera.position.set(0, 0.4, 7.8);
-
-    const introRenderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
-    introRenderer.setSize(window.innerWidth, window.innerHeight);
-    introRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    introRenderer.shadowMap.enabled = true;
-    introContainer.appendChild(introRenderer.domElement);
-
-    // Studio Lighting
-    const ambientLight = new THREE.AmbientLight(0xffffff, 1.15);
-    introScene.add(ambientLight);
-
-    const mainLight = new THREE.DirectionalLight(0xffffff, 1.25);
-    mainLight.position.set(6, 14, 10);
-    introScene.add(mainLight);
-
-    const rimLight = new THREE.DirectionalLight(0xd9e2ec, 0.6);
-    rimLight.position.set(-8, -4, 4);
-    introScene.add(rimLight);
-
-    // Master Hierarchy
-    const laptopRig = new THREE.Group();
-    laptopRig.position.set(0, -0.2, 0);
-    introScene.add(laptopRig);
-
-    // Base Group (stays horizontal)
-    const baseGroup = new THREE.Group();
-    laptopRig.add(baseGroup);
-
-    // Lid Pivot Group (hinged at the back edge of the base)
-    const lidPivot = new THREE.Group();
-    lidPivot.position.set(0, 0.06, -1.15); // Pinned precisely to rear edge
-    laptopRig.add(lidPivot);
-
-    // Materials
-    const chassisMat = new THREE.MeshStandardMaterial({ color: 0x121417, roughness: 0.25, metalness: 0.85 });
-    const deckMat = new THREE.MeshStandardMaterial({ color: 0x090a0d, roughness: 0.4, metalness: 0.5 });
-    const keyMat = new THREE.MeshStandardMaterial({ color: 0x1c1f24, roughness: 0.5 });
-    const pcbMat = new THREE.MeshStandardMaterial({ color: 0x0d3822, roughness: 0.5 });
-    const ramPcbMat = new THREE.MeshStandardMaterial({ color: 0x124a2c, roughness: 0.4, metalness: 0.3 });
-    const chipMat = new THREE.MeshStandardMaterial({ color: 0x050505, roughness: 0.2, metalness: 0.6 });
-    const goldMat = new THREE.MeshStandardMaterial({ color: 0xd4af37, roughness: 0.3, metalness: 0.9 });
-
-    /* =======================================================
-       2D CANVAS TEXTURE (TYPEWRITER ON SCREEN)
-    ======================================================= */
-    const sCanvas = document.createElement('canvas');
-    sCanvas.width = 1024;
-    sCanvas.height = 640;
-    const sCtx = sCanvas.getContext('2d');
-
-    const sTexture = new THREE.CanvasTexture(sCanvas);
-    sTexture.minFilter = THREE.LinearFilter;
-
-    // MeshBasicMaterial ensures pure white glow and zero culling/shading bugs
-    const screenDisplayMat = new THREE.MeshBasicMaterial({
-      map: sTexture,
-      side: THREE.FrontSide
-    });
-
-    let screenState = 'off';
-    const fullText = "Hi Welcome,\nThis is Harshil's Portfolio.\nClick Enter";
-    let typedCount = 0;
-
-    function updateScreenTexture() {
-      // Pure white display panel
-      sCtx.fillStyle = '#ffffff';
-      sCtx.fillRect(0, 0, sCanvas.width, sCanvas.height);
-
-      // Clean border bezel
-      sCtx.strokeStyle = '#e2e8f0';
-      sCtx.lineWidth = 14;
-      sCtx.strokeRect(0, 0, sCanvas.width, sCanvas.height);
-
-      if (screenState === 'off') {
-        sTexture.needsUpdate = true;
-        return;
-      }
-
-      if (screenState === 'name') {
-        sCtx.textAlign = 'center';
-        sCtx.fillStyle = '#0f1115';
-        sCtx.font = '82px Plus Jakarta Sans, sans-serif';
-        sCtx.fillText('HARSHIL DYAVATHI', 512, 340);
-        sTexture.needsUpdate = true;
-        return;
-      }
-
-      // Typewriter mode
-      const current = fullText.slice(0, typedCount);
-      const lines = current.split('\n');
-
-      sCtx.textAlign = 'center';
-      sCtx.fillStyle = '#0f1115';
-
-      if (lines[0]) {
-        sCtx.font = '72px Plus Jakarta Sans, sans-serif';
-        sCtx.fillText(lines[0], 512, 220);
-      }
-      if (lines[1]) {
-        sCtx.font = '40px Instrument Serif, serif';
-        sCtx.fillStyle = '#374151';
-        sCtx.fillText(lines[1], 320, 320);
-      }
-      if (lines[2]) {
-        sCtx.font = '26px JetBrains Mono, monospace';
-        sCtx.fillStyle = '#0f1115';
-        sCtx.fillText(lines[2], 512, 440);
-      }
-
-      sTexture.needsUpdate = true;
-    }
-    updateScreenTexture();
-
-    /* =======================================================
-       HARDWARE MESH PIECES WITH STAGED TARGETS
-    ======================================================= */
-    const animatedParts = [];
-
-    function addAssemblyPart(mesh, parent, targetPos, targetRot, scatterPos, scatterRot, startThreshold, endThreshold) {
-      mesh.position.copy(scatterPos);
-      mesh.rotation.set(scatterRot.x, scatterRot.y, scatterRot.z);
-      parent.add(mesh);
-
-      animatedParts.push({
-        mesh,
-        targetPos,
-        targetRot,
-        scatterPos,
-        scatterRot,
-        startThreshold,
-        endThreshold
-      });
-    }
-
-    // 1. Bottom Aluminum Chassis Tub
-    const bottomTub = new THREE.Mesh(new THREE.BoxGeometry(3.5, 0.08, 2.3), chassisMat);
-    addAssemblyPart(
-      bottomTub,
-      baseGroup,
-      new THREE.Vector3(0, -0.04, 0),
-      new THREE.Vector3(0, 0, 0),
-      new THREE.Vector3(0, -5, 0),
-      new THREE.Vector3(0.3, 0, 0),
-      0.0, 0.25
-    );
-
-    // 2. Motherboard with processor chip
-    const moboGroup = new THREE.Group();
-    const moboPlane = new THREE.Mesh(new THREE.BoxGeometry(3.0, 0.02, 1.9), pcbMat);
-    const cpuChip = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.03, 0.5), chipMat);
-    cpuChip.position.set(0.3, 0.015, -0.2);
-    moboGroup.add(moboPlane, cpuChip);
-
-    addAssemblyPart(
-      moboGroup,
-      baseGroup,
-      new THREE.Vector3(0, -0.01, 0),
-      new THREE.Vector3(0, 0, 0),
-      new THREE.Vector3(-4.5, -4, -3),
-      new THREE.Vector3(0.5, -0.5, 0.4),
-      0.15, 0.35
-    );
-
-    // 3. Dual RAM Sticks (DDR5)
-    for (let i = 0; i < 2; i++) {
-      const ramGroup = new THREE.Group();
-      const ramPcb = new THREE.Mesh(new THREE.BoxGeometry(0.7, 0.03, 0.22), ramPcbMat);
-      const ramGold = new THREE.Mesh(new THREE.BoxGeometry(0.68, 0.032, 0.04), goldMat);
-      ramGold.position.set(0, 0, -0.1);
-      ramGroup.add(ramPcb, ramGold);
-
-      addAssemblyPart(
-        ramGroup,
-        baseGroup,
-        new THREE.Vector3(-0.6, 0.015, -0.25 + i * 0.32),
-        new THREE.Vector3(0, 0, 0),
-        new THREE.Vector3(-5 + i * 2, 4, 3),
-        new THREE.Vector3(-1.2, 1.2, 0.5),
-        0.22 + i * 0.05, 0.45 + i * 0.05
-      );
-    }
-
-    // 4. M.2 NVMe SSD Storage with Gold Pin Connector
-    const ssdGroup = new THREE.Group();
-    const ssdBody = new THREE.Mesh(new THREE.BoxGeometry(0.85, 0.03, 0.28), chipMat);
-    const ssdGold = new THREE.Mesh(new THREE.BoxGeometry(0.12, 0.035, 0.24), goldMat);
-    ssdGold.position.set(-0.43, 0, 0);
-    ssdGroup.add(ssdBody, ssdGold);
-
-    addAssemblyPart(
-      ssdGroup,
-      baseGroup,
-      new THREE.Vector3(0.65, 0.015, -0.2),
-      new THREE.Vector3(0, 0, 0),
-      new THREE.Vector3(5, 3.5, 3),
-      new THREE.Vector3(0.8, -1.2, 0.4),
-      0.28, 0.48
-    );
-
-    // 5. Unibody Top Deck (Recessed Well)
-    const topDeck = new THREE.Mesh(new THREE.BoxGeometry(3.5, 0.04, 2.3), chassisMat);
-    addAssemblyPart(
-      topDeck,
-      baseGroup,
-      new THREE.Vector3(0, 0.02, 0),
-      new THREE.Vector3(0, 0, 0),
-      new THREE.Vector3(0, 4.5, 0),
-      new THREE.Vector3(-0.4, 0, 0),
-      0.35, 0.60
-    );
-
-    // 6. Trackpad Glass Plate
-    const trackpadMesh = new THREE.Mesh(new THREE.BoxGeometry(1.05, 0.02, 0.7), deckMat);
-    addAssemblyPart(
-      trackpadMesh,
-      baseGroup,
-      new THREE.Vector3(0, 0.041, 0.62),
-      new THREE.Vector3(0, 0, 0),
-      new THREE.Vector3(0, -3.5, 4.5),
-      new THREE.Vector3(0.3, 0.5, -0.4),
-      0.45, 0.68
-    );
-
-    // 7. Keyboard Grid Assembly (Realistic Keys Tray)
-    const kbGroup = new THREE.Group();
-    const kbBase = new THREE.Mesh(new THREE.BoxGeometry(2.8, 0.02, 1.25), deckMat);
-    kbGroup.add(kbBase);
-
-    for (let row = 0; row < 5; row++) {
-      for (let col = 0; col < 13; col++) {
-        const key = new THREE.Mesh(new THREE.BoxGeometry(0.16, 0.025, 0.18), keyMat);
-        key.position.set(-1.15 + col * 0.19, 0.015, -0.42 + row * 0.21);
-        kbGroup.add(key);
-      }
-    }
-
-    addAssemblyPart(
-      kbGroup,
-      baseGroup,
-      new THREE.Vector3(0, 0.041, -0.25),
-      new THREE.Vector3(0, 0, 0),
-      new THREE.Vector3(0, 5, 2.5),
-      new THREE.Vector3(-0.8, 0.4, 0.4),
-      0.50, 0.72
-    );
-
-    // 8. Steel Barrel Hinge (At Pivot Point)
-    const hingeMesh = new THREE.Mesh(new THREE.CylinderGeometry(0.065, 0.065, 3.1, 16), chassisMat);
-    hingeMesh.rotation.z = Math.PI / 2;
-    hingeMesh.position.set(0, 0, 0);
-    lidPivot.add(hingeMesh);
-
-    // 9. Display Lid Group
-    const lidGroup = new THREE.Group();
-    const lidShell = new THREE.Mesh(new THREE.BoxGeometry(3.5, 2.25, 0.06), chassisMat);
-    lidShell.position.set(0, 1.125, -0.03); // Shifted up from pivot
-
-    // The Pure White Display Screen Panel
-    const displayPanel = new THREE.Mesh(new THREE.PlaneGeometry(3.1, 1.95), screenDisplayMat);
-    displayPanel.position.set(0, 1.125, 0.005); // Clearly on the front face
-
-    lidGroup.add(lidShell, displayPanel);
-
-    // Assembly targets for the lid
-    addAssemblyPart(
-      lidGroup,
-      lidPivot,
-      new THREE.Vector3(0, 0, 0),
-      new THREE.Vector3(0, 0, 0),
-      new THREE.Vector3(4, 5, -5),
-      new THREE.Vector3(-1.2, 0.8, -0.5),
-      0.60, 0.88
-    );
-
-    // Assembly Progression State
-    let assemblyProgress = 0;
-    const assemblySpeed = 0.0028; // Smooth ~10s timeline
-    let assemblyDone = false;
-    let canProceed = false;
-
-    function stepAssembly() {
-      if (assemblyProgress < 1) {
-        assemblyProgress += assemblySpeed;
-        const pct = Math.min(100, Math.floor(assemblyProgress * 100));
-        progressFill.style.width = `${pct}%`;
-
-        // Dynamic Phase Updates
-        if (assemblyProgress < 0.25) {
-          progressStage.innerText = 'PHASE 1 / 5';
-          progressStatus.innerText = 'SLOTTING MOTHERBOARD & CHASSIS BASE...';
-        } else if (assemblyProgress < 0.50) {
-          progressStage.innerText = 'PHASE 2 / 5';
-          progressStatus.innerText = 'ATTACHING DUAL DDR5 RAM & NVME M.2 SSD...';
-        } else if (assemblyProgress < 0.70) {
-          progressStage.innerText = 'PHASE 3 / 5';
-          progressStatus.innerText = 'SECURING TOP DECK, KEYBOARD & TOUCHPAD...';
-        } else if (assemblyProgress < 0.88) {
-          progressStage.innerText = 'PHASE 4 / 5';
-          progressStatus.innerText = 'CONNECTING HINGE BARREL & DISPLAY HOUSING...';
-        } else {
-          progressStage.innerText = 'PHASE 5 / 5';
-          progressStatus.innerText = 'TILTING OPEN DISPLAY & POWERING SCREEN...';
-        }
-
-        // Interpolate Hardware Mesh Positions
-        animatedParts.forEach(p => {
-          if (assemblyProgress >= p.startThreshold) {
-            const localP = Math.min(1, (assemblyProgress - p.startThreshold) / (p.endThreshold - p.startThreshold));
-            const ease = 1 - Math.pow(1 - localP, 3);
-
-            p.mesh.position.lerpVectors(p.scatterPos, p.targetPos, ease);
-            p.mesh.rotation.x = THREE.MathUtils.lerp(p.scatterRot.x, p.targetRot.x, ease);
-            p.mesh.rotation.y = THREE.MathUtils.lerp(p.scatterRot.y, p.targetRot.y, ease);
-            p.mesh.rotation.z = THREE.MathUtils.lerp(p.scatterRot.z, p.targetRot.z, ease);
-          }
-        });
-
-        // Smoothly tilt lid open between 75% and 100%
-        if (assemblyProgress > 0.75) {
-          const openP = (assemblyProgress - 0.75) / 0.25;
-          // Smooth tilt back from 90° closed to -15° open (total 105° open angle)
-          lidPivot.rotation.x = THREE.MathUtils.lerp(1.57, -0.26, 1 - Math.pow(1 - openP, 3));
-        }
-      } else if (!assemblyDone) {
-        assemblyDone = true;
-        progressStage.innerText = 'ASSEMBLED';
-        progressStatus.innerText = 'DISPLAY ACTIVE. TYPEWRITER RUNNING...';
-
-        // Start Letter-by-Letter Typewriter on Screen
-        screenState = 'typing';
-        const typeInterval = setInterval(() => {
-          typedCount++;
-          updateScreenTexture();
-          if (typedCount >= fullText.length) {
-            clearInterval(typeInterval);
-            canProceed = true;
-            progressStage.innerText = 'READY';
-            progressStatus.innerText = 'CLICK SCREEN OR PRESS ENTER TO CONTINUE';
-          }
-        }, 45);
-      }
-    }
-
-    // 3D Render Loop with Interactive Cursor Parallax
-    function renderIntro() {
-      requestAnimationFrame(renderIntro);
-      stepAssembly();
-
-      if (assemblyDone) {
-        // Laptop reacts to cursor position in real time
-        const targetRotY = (mouseX / window.innerWidth - 0.5) * 0.45;
-        const targetRotX = 0.08 + (mouseY / window.innerHeight - 0.5) * 0.22;
-
-        laptopRig.rotation.y += (targetRotY - laptopRig.rotation.y) * 0.05;
-        laptopRig.rotation.x += (targetRotX - laptopRig.rotation.x) * 0.05;
-      } else {
-        laptopRig.rotation.y += 0.0018;
-      }
-
-      introRenderer.render(introScene, introCamera);
-    }
-    renderIntro();
-
-    // Camera Zoom-In Transition
-    function triggerEnterTransition() {
-      if (!canProceed) return;
-      canProceed = false;
-
-      // Screen flashes Harshil's Name
-      screenState = 'name';
-      updateScreenTexture();
-
-      let zoom = 0;
-      const zoomInterval = setInterval(() => {
-        zoom += 0.04;
-        introCamera.position.z -= 0.35;
-        introCamera.position.y += 0.02;
-        if (zoom >= 1) {
-          clearInterval(zoomInterval);
-          introOverlay.classList.add('hidden');
-        }
-      }, 16);
-    }
-
-    introContainer.addEventListener('click', triggerEnterTransition);
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') triggerEnterTransition();
-    });
-
-    /* =======================================================
-       3. INTERACTIVE WAVY TERRAIN WIREFRAME (PURE WHITE THEME)
-    ======================================================= */
-    const waveCanvas = document.getElementById('wavy-canvas');
-    const wCtx = waveCanvas.getContext('2d');
-
-    let wWidth, wHeight;
-    function resizeWaveCanvas() {
-      wWidth = waveCanvas.width = window.innerWidth;
-      wHeight = waveCanvas.height = window.innerHeight;
-    }
-    window.addEventListener('resize', resizeWaveCanvas);
-    resizeWaveCanvas();
-
-    let waveOffset = 0;
-    function drawWaveGrid() {
-      wCtx.clearRect(0, 0, wWidth, wHeight);
-
-      const cols = 36;
-      const rows = 26;
-      const colSpacing = wWidth / cols;
-      const rowSpacing = wHeight / rows;
-
-      waveOffset += 0.018;
-
-      // Horizontal Wavy Lines
-      for (let r = 0; r <= rows; r++) {
-        wCtx.beginPath();
-        for (let c = 0; c <= cols; c++) {
-          const x = c * colSpacing;
-          const dist = Math.hypot(x - mouseX, r * rowSpacing - mouseY);
-          const ripple = Math.sin(dist * 0.02 - waveOffset * 2) * 8;
-          const y = r * rowSpacing + Math.sin(c * 0.3 + waveOffset + r * 0.2) * 12 + ripple;
-
-          if (c === 0) wCtx.moveTo(x, y);
-          else wCtx.lineTo(x, y);
-        }
-        wCtx.strokeStyle = 'rgba(15, 17, 21, 0.07)';
-        wCtx.lineWidth = 1;
-        wCtx.stroke();
-      }
-
-      // Vertical Connecting Lines
-      for (let c = 0; c <= cols; c += 2) {
-        wCtx.beginPath();
-        for (let r = 0; r <= rows; r++) {
-          const x = c * colSpacing;
-          const dist = Math.hypot(x - mouseX, r * rowSpacing - mouseY);
-          const ripple = Math.sin(dist * 0.02 - waveOffset * 2) * 8;
-          const y = r * rowSpacing + Math.sin(c * 0.3 + waveOffset + r * 0.2) * 12 + ripple;
-
-          if (r === 0) wCtx.moveTo(x, y);
-          else wCtx.lineTo(x, y);
-        }
-        wCtx.strokeStyle = 'rgba(15, 17, 21, 0.035)';
-        wCtx.lineWidth = 1;
-        wCtx.stroke();
-      }
-
-      requestAnimationFrame(drawWaveGrid);
-    }
-    drawWaveGrid();
-  </script>
-</body>
-</html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harshil Dyavathi | Portfolio</title>
+<style>
+/* ===== Colour tokens: change here only. Defaults = high-contrast white aesthetic ===== */
+:root{--bg:#fff;--ink:#0a0a0a;--mute:#555;--line:#e2e2e2;--card:#f6f6f6;--wire:#111}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+body.loading{overflow:hidden;touch-action:none}
+a{color:inherit;text-decoration:none}
+canvas#bg,canvas#lap{position:fixed;inset:0;width:100%;height:100%;pointer-events:none}
+canvas#bg{z-index:0}canvas#lap{z-index:2;transition:opacity 1s}
+nav{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:16px 5vw;background:rgba(255,255,255,.25);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);transition:opacity .8s}
+nav .logo{font-weight:800}nav .logo b{background:var(--ink);color:var(--bg);padding:2px 7px;margin-right:8px}
+nav .links a{margin-left:22px;font-size:.9rem;color:var(--mute)}nav .links a:hover{color:var(--ink)}
+main{position:relative;z-index:3}
+html{scroll-snap-type:y proximity}section{min-height:100vh;width:100%;padding:90px 5vw 50px;display:flex;flex-direction:column;justify-content:center;scroll-snap-align:start}
+.tag{font:600 .75rem monospace;letter-spacing:.15em;color:var(--mute);margin-bottom:10px}
+h2{font-size:clamp(2rem,4vw,3rem);letter-spacing:-.02em;margin-bottom:24px}
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;max-width:none}
+.hero-in{max-width:min(900px,100%)}
+h1{font-size:clamp(2.8rem,7vw,5.5rem);line-height:1;letter-spacing:-.04em;margin:12px 0 20px}
+.btn{display:inline-block;padding:12px 24px;border:2px solid var(--ink);font-weight:600;margin:20px 12px 0 0;transition:.2s}
+.btn.f{background:var(--ink);color:var(--bg)}.btn:hover{transform:translateY(-3px)}
+.stats{display:flex;gap:30px;flex-wrap:wrap;margin-top:34px}.stats b{display:block;font-size:1.8rem}.stats span{font-size:.8rem;color:var(--mute)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.card{background:transparent;border:1px solid rgba(10,10,10,.28);padding:26px;transition:.25s}
+.card:hover{border-color:var(--ink);transform:translateY(-4px)}
+.card h3{margin-bottom:8px}.card p{color:var(--mute);font-size:.95rem;margin-bottom:10px}
+.chip{display:inline-block;font:.75rem monospace;border:1px solid var(--ink);padding:2px 9px;margin:3px 4px 3px 0;background:transparent}
+.kicker{font:.72rem monospace;color:var(--mute);letter-spacing:.1em;margin-bottom:8px;display:block}
+.blk{background:transparent;width:100%}
+li{margin:8px 0 8px 18px}
+footer{position:relative;z-index:3;text-align:center;padding:40px;border-top:1px solid rgba(10,10,10,.2);color:var(--mute);font-size:.85rem;background:transparent;scroll-snap-align:end}
+/* hero text hidden until assembly finished */
+nav,main,footer{opacity:0;visibility:hidden;transition:opacity 1.2s}body.ready nav,body.ready main,body.ready footer{opacity:1;visibility:visible}body.loading{touch-action:none}
+#loader{position:fixed;left:0;right:0;bottom:0;z-index:10;text-align:center;padding:26px;transition:opacity .8s;pointer-events:none}
+#loader.done{opacity:0}
+#lt{font:700 .85rem 'Space Mono',monospace;letter-spacing:.16em;text-transform:uppercase}
+#bar{width:min(380px,70vw);height:3px;background:var(--line);margin:12px auto 0}#bar i{display:block;height:100%;width:0;background:var(--ink)}
+#skip{pointer-events:auto;position:fixed;top:18px;right:5vw;z-index:11;font:.75rem monospace;border:1px solid var(--ink);background:var(--bg);padding:6px 12px;cursor:pointer}
+body.ready #skip{display:none}
+@media(max-width:800px){nav .links{display:none}}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"></head>
+<body class="loading">
+<canvas id="bg"></canvas><canvas id="lap"></canvas>
+<button id="skip">SKIP ▸</button>
+<div id="loader"><div id="lt">Initialising chassis...</div><div id="bar"><i></i></div></div>
+
+<nav><a class="logo" href="#hero"><b>HD</b>Harshil Dyavathi</a>
+<div class="links"><a href="#about">About</a><a href="#skills">Skills</a><a href="#work">Projects</a><a href="#experience">Education</a><a href="#contact">Connect</a></div></nav>
+
+<main>
+<section id="hero"><div class="hero-in">
+<div class="tag">// ARTIFICIAL INTELLIGENCE &amp; MACHINE LEARNING</div>
+<h1>Harshil<br>Dyavathi.</h1>
+<p style="color:var(--mute)">Aspiring Artificial Intelligence &amp; Machine Learning professional with foundational knowledge of Python and machine learning concepts. Committed to developing innovative solutions through practical projects and continuous learning.</p>
+<a class="btn f" href="#work">Explore Projects</a><a class="btn" href="#contact">Get in Touch</a>
+<div class="stats"><div><b>3+</b><span>Key Projects Built</span></div><div><b>AIML</b><span>Specialization Track</span></div><div><b>100%</b><span>High School Score</span></div><div><b>4</b><span>Languages Known</span></div></div>
+</div></section>
+
+<section id="about"><div class="blk"><div class="tag">01 // PROFILE</div><h2>Professional Overview.</h2>
+<p style="max-width:1000px">Strong problem-solving, analytical, and communication skills, with quick adaptability to new technologies. Seeking internships to apply technical expertise and advance in AI and software development.</p><br>
+<p style="max-width:1000px">Committed to building scalable software that bridges intelligent backend architectures with responsive frontend interfaces and real-time computer vision.</p>
+<h3 style="margin-top:28px">Behavioral Strengths</h3><ul>
+<li><b>Problem Solving:</b> Structured debugging and root-cause algorithmic optimization.</li>
+<li><b>Analytical Thinking:</b> Systematic evaluation of system pipelines and architectures.</li>
+<li><b>Team Collaboration:</b> Clear cross-functional technical communication.</li>
+<li><b>Communication Skills:</b> Technical documentation and collaborative planning.</li></ul></div></section>
+
+<section id="skills"><div class="tag">02 // ARSENAL</div><h2>Technical Skills &amp; Stack.</h2><div class="grid">
+<div class="card"><h3>Languages</h3><span class="chip">Python 3.11</span><span class="chip">JavaScript</span><span class="chip">HTML5</span><span class="chip">CSS3</span></div>
+<div class="card"><h3>Frameworks &amp; Web</h3><span class="chip">Node.js</span><span class="chip">Three.js</span><span class="chip">Firebase</span><span class="chip">Chart.js</span></div>
+<div class="card"><h3>AI &amp; Computer Vision</h3><span class="chip">Machine Learning</span><span class="chip">Real-Time Detection</span><span class="chip">Face Recognition</span><span class="chip">Gemini AI API</span></div></div></section>
+
+<section id="work"><div class="tag">03 // PROJECT EXPERIENCE</div><h2>Featured Systems.</h2><div class="grid">
+<div class="card"><span class="kicker">Full-Stack Web App</span><h3>1. mPOS (Mobile Point of Sale)</h3><p>Built a web-app used for flexible handling of order taking and billing at restaurants. Implemented user authentication and an interactive dashboard.</p><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">Node.js</span><span class="chip">JavaScript</span><p style="margin-top:10px"><b>Future Enhancements:</b> Automating order taking, payment gateway integration, reducing complexity of tallying daily revenue.</p><a class="btn f" href="https://m-pos-gamma.vercel.app/" target="_blank">Launch Live App</a></div>
+<div class="card"><span class="kicker">AI + HealthTech</span><h3>2. Lunara — The Moon Within You</h3><p>Built a web-app for women to track their menstrual cycle with additional info about their daily insights based on their inputs. Designed an intuitive user interface for easy status monitoring.</p><span class="chip">Three.js</span><span class="chip">Chart.js</span><span class="chip">Gemini AI API</span><span class="chip">Firebase</span><p style="margin-top:10px"><b>Architecture:</b> Three.js 3D dynamics, Gemini AI integration, and Firebase authentication &amp; data storage.</p><a class="btn f" href="https://lunara-weeb.vercel.app/" target="_blank">Launch Live App</a></div>
+<div class="card"><span class="kicker">Computer Vision</span><h3>3. Real-Time Face Detection</h3><p>Developed an application that detects human faces in video camera streams and recognizes individuals in real time.</p><span class="chip">Python 3.11</span><span class="chip">OpenCV</span><p style="margin-top:10px"><b>Future Enhancement:</b> Integrating with a large-scale database to solve real-time issues.</p><span class="chip">Database Hook Ongoing</span></div></div></section>
+
+<section id="experience"><div class="blk"><div class="tag">04 // EDUCATION</div><h2>Academic Timeline.</h2><div class="grid">
+<div class="card"><span class="kicker">Expected 07/2027 · Grade: 70%</span><h4>Bachelor of Engineering — Artificial Intelligence &amp; Machine Learning</h4><p>Methodist College of Engineering and Technology, Hyderabad, India</p></div>
+<div class="card"><span class="kicker">Intermediate Higher Secondary · Score: 82.9%</span><h4>Govt Junior College</h4><p>Makloor, Nizamabad, India</p></div>
+<div class="card"><span class="kicker">Secondary School Certificate (SSC) · Score: 100%</span><h4>St. Francis De Sales High School</h4><p>Nizamabad, India</p></div></div><br>
+<div class="grid"><div class="card"><span class="kicker">// INTERESTS</span><h3>Domain Focus</h3><p>AI &amp; Machine Learning, Python Programming, Ethical Hacking, Cyber Security, Business Analysis, Stock Market, Current Affairs, Business &amp; Marketing.</p></div>
+<div class="card"><span class="kicker">// PERSONAL</span><h3>Beyond Code</h3><p>Motorcycle Touring, Cinematography, Still Photography, Gaming, Sports &amp; Fitness, Music, Watching Movies.</p>
+<span class="chip">Telugu (C2)</span><span class="chip">Hindi (B2)</span><span class="chip">English (B2)</span><span class="chip">German (A2)</span></div></div></div></section>
+
+<section id="contact"><div class="blk"><div class="tag">05 // CONNECT</div><h2>Let’s build something impactful.</h2>
+<p>Seeking internships to apply technical expertise and advance in AI and software development.</p>
+<a class="btn f" href="mailto:dyavathiharshil07@gmail.com">dyavathiharshil07@gmail.com</a><a class="btn" href="tel:+917386425266">+91 7386425266</a><a class="btn" href="https://linkedin.com/in/harshil-dyavathi-93983628b" target="_blank">Harshil Dyavathi</a></div></section>
+</main>
+<footer>HARSHIL DYAVATHI<br>© 2026 Harshil Dyavathi. All rights reserved.</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const $=s=>document.querySelector(s),mob=()=>innerWidth<800,clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
+let mx=0,my=0,now=0,stage=0,pulse={t:-99,x:0,y:0},z=0,zt=0,ty=0,typed=0,txt='';
+/* stages: 0 build · 1 typing intro · 2 wait for Enter · 3 typing welcome · 4 scroll-zoom · 5 home */
+const setP=(x,y)=>{mx=x/innerWidth*2-1;my=y/innerHeight*2-1};
+addEventListener('pointermove',e=>setP(e.clientX,e.clientY));
+addEventListener('pointerdown',e=>{setP(e.clientX,e.clientY);pulse={t:now,x:mx,y:my}});
+addEventListener('touchstart',e=>{const t=e.touches[0];setP(t.clientX,t.clientY);ty=t.clientY;pulse={t:now,x:mx,y:my}},{passive:true});
+addEventListener('touchmove',e=>{const t=e.touches[0];setP(t.clientX,t.clientY);if(stage===4){zt=clamp(zt+(ty-t.clientY)*.004);}ty=t.clientY},{passive:true});
+addEventListener('wheel',e=>{if(stage===4)zt=clamp(zt+e.deltaY*.0009)},{passive:true});
+function advance(){if(stage===2){stage=3;txt=intro2;typed=0;LT.textContent='';}}
+addEventListener('keydown',e=>{if(e.key==='Enter')advance();if(stage===4&&(e.key==='ArrowDown'||e.key===' '||e.key==='PageDown')){e.preventDefault();zt=clamp(zt+.2)}if(stage===4&&e.key==='ArrowUp')zt=clamp(zt-.2)});
+addEventListener('click',e=>{if(e.target.id!=='skip')advance()});
+
+/* ============ ACTIVE, TOUCH-RESPONSIVE WAVY WIREFRAME (intro + home) ============ */
+const bgR=new THREE.WebGLRenderer({canvas:$('#bg'),antialias:true,alpha:true});
+const bgS=new THREE.Scene(),bgC=new THREE.PerspectiveCamera(55,1,.1,200);
+bgC.position.set(0,10,10);bgC.lookAt(0,0,0);bgS.fog=new THREE.Fog(0xffffff,26,58);
+const pg=new THREE.PlaneGeometry(120,100,96,80);pg.rotateX(-Math.PI/2);
+const pm=new THREE.Mesh(pg,new THREE.MeshBasicMaterial({color:0x111111,wireframe:true,transparent:true,opacity:.2}));
+pm.position.y=0;bgS.add(pm);const base=pg.attributes.position.array.slice();
+function wave(t){const p=pg.attributes.position.array,age=t-pulse.t,asp=innerWidth/innerHeight,px=mx*7.3*asp,pz=my<0?my*21:my*13,qx=pulse.x*7.3*asp,qz=pulse.y<0?pulse.y*21:pulse.y*13;
+ for(let i=0;i<p.length;i+=3){const x=base[i],zz=base[i+2];
+  let y=base[i+1]+Math.sin(x*.35+t*.9)*.7+Math.cos(zz*.4+t*.7)*.6+Math.sin((x+zz)*.2+t*.5)*.5;
+  const d=Math.hypot(x-px,zz-pz);y+=Math.sin(d*.6-t*2.2)*.5*Math.exp(-d*.06);          /* follows finger/cursor */
+  if(age<4){const dp=Math.hypot(x-qx,zz-qz);y+=Math.sin(dp*.9-age*7)*Math.exp(-age*1.1-dp*.05)*2;} /* tap ripple */
+  p[i+1]=y;}
+ pg.attributes.position.needsUpdate=true;}
+
+/* ============ BLACK LAPTOP ============ */
+const R=new THREE.WebGLRenderer({canvas:$('#lap'),antialias:true,alpha:true});
+R.outputEncoding=THREE.sRGBEncoding;R.toneMapping=THREE.ACESFilmicToneMapping;R.toneMappingExposure=1.2;
+R.shadowMap.enabled=true;R.shadowMap.type=THREE.PCFSoftShadowMap;
+const S=new THREE.Scene(),C=new THREE.PerspectiveCamera(32,1,.1,100);
+(function(){const c=document.createElement('canvas');c.width=512;c.height=256;const g=c.getContext('2d');
+ const gr=g.createLinearGradient(0,0,0,256);gr.addColorStop(0,'#fff');gr.addColorStop(.5,'#8a8a8a');gr.addColorStop(1,'#222');g.fillStyle=gr;g.fillRect(0,0,512,256);
+ g.fillStyle='#fff';g.fillRect(40,30,150,70);g.fillRect(320,40,140,50);g.fillRect(0,120,512,10);
+ const t=new THREE.CanvasTexture(c);t.mapping=THREE.EquirectangularReflectionMapping;t.encoding=THREE.sRGBEncoding;
+ S.environment=new THREE.PMREMGenerator(R).fromEquirectangular(t).texture;})();
+S.add(new THREE.HemisphereLight(0xffffff,0x888888,.55));
+const key=new THREE.DirectionalLight(0xffffff,1.6);key.position.set(4,8,5);key.castShadow=true;key.shadow.mapSize.set(1024,1024);S.add(key);
+const rim=new THREE.DirectionalLight(0xffffff,.9);rim.position.set(-5,3,-4);S.add(rim);
+const gnd=new THREE.Mesh(new THREE.PlaneGeometry(30,30),new THREE.ShadowMaterial({opacity:.2}));gnd.rotateX(-Math.PI/2);gnd.position.y=-.01;gnd.receiveShadow=true;S.add(gnd);
+const M={
+ alu:new THREE.MeshStandardMaterial({color:0x121316,metalness:.85,roughness:.38}),
+ aluD:new THREE.MeshStandardMaterial({color:0x1c1d21,metalness:.8,roughness:.45}),
+ key:new THREE.MeshStandardMaterial({color:0x1f2024,metalness:.1,roughness:.6}),
+ pad:new THREE.MeshStandardMaterial({color:0x1a1b1f,metalness:.6,roughness:.25}),
+ black:new THREE.MeshStandardMaterial({color:0x050506,metalness:.2,roughness:.35}),
+ pcb:new THREE.MeshStandardMaterial({color:0x1b3a2a,metalness:.3,roughness:.5}),
+ chip:new THREE.MeshStandardMaterial({color:0x2a2a2a,metalness:.6,roughness:.3}),
+ gold:new THREE.MeshStandardMaterial({color:0xd4a64a,metalness:1,roughness:.25}),
+ batt:new THREE.MeshStandardMaterial({color:0x3a3d45,metalness:.5,roughness:.5})};
+function rbox(w,d,h,r,mat,bev=.012){const s=new THREE.Shape(),x=-w/2,y=-d/2;
+ s.moveTo(x+r,y);s.lineTo(x+w-r,y);s.quadraticCurveTo(x+w,y,x+w,y+r);s.lineTo(x+w,y+d-r);s.quadraticCurveTo(x+w,y+d,x+w-r,y+d);
+ s.lineTo(x+r,y+d);s.quadraticCurveTo(x,y+d,x,y+d-r);s.lineTo(x,y+r);s.quadraticCurveTo(x,y,x+r,y);
+ const g=new THREE.ExtrudeGeometry(s,{depth:h-bev*2,bevelEnabled:true,bevelThickness:bev,bevelSize:bev,bevelSegments:3,curveSegments:10});
+ g.rotateX(-Math.PI/2);g.translate(0,bev,0);const m=new THREE.Mesh(g,mat);m.castShadow=m.receiveShadow=true;return m;}
+const box=(w,h,d,mat,x,y,z)=>{const m=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),mat);m.position.set(x,y,z);m.castShadow=true;return m;};
+const W=3.2,D=2.2,H=.2,rig=new THREE.Group();S.add(rig);const parts=[];
+function part(name,obj,off,dur=1.6){rig.add(obj);obj.visible=false;parts.push({name,obj,fin:obj.position.clone(),off:new THREE.Vector3(...off),dur});}
+
+let g=new THREE.Group();g.add(rbox(W,D,.04,.14,M.aluD));
+[[-1.4,.9],[1.4,.9],[-1.4,-.9],[1.4,-.9]].forEach(p=>{const f=new THREE.Mesh(new THREE.CylinderGeometry(.09,.09,.02,24),M.black);f.position.set(p[0],-.005,p[1]);g.add(f);});
+part('Seating unibody bottom chassis',g,[0,-3,0]);
+g=new THREE.Group();[[0,2.2],[-1.35,.5],[1.35,.5]].forEach(a=>g.add(box(a[1],.07,.7,M.batt,a[0],.075,.62)));
+part('Mounting lithium-polymer battery pack',g,[0,3,2]);
+g=new THREE.Group();g.add(box(2.7,.03,1.0,M.pcb,0,.1,-.55));
+[-.7,.2,.9].forEach((p,i)=>g.add(box(.35+i*.08,.04,.35+i*.08,M.chip,p,.135,-.55)));
+for(let i=0;i<14;i++)g.add(box(.08,.025,.05,M.gold,-1.2+i*.18,.125,-.1));
+part('Placing logic board, SoC & power ICs',g,[-3,2.5,-1]);
+g=new THREE.Group();for(let k=0;k<2;k++){g.add(box(.9,.02,.25,M.pcb,-.2,.12+k*.03,-.95));for(let i=0;i<4;i++)g.add(box(.17,.025,.15,M.chip,-.5+i*.22,.14+k*.03,-.95));}
+part('Slotting memory bus — LPDDR modules',g,[3,3,-1.5]);
+g=new THREE.Group();g.add(box(.9,.025,.3,M.pcb,.9,.13,-.2));g.add(box(.2,.03,.2,M.chip,.75,.155,-.2));g.add(box(.2,.03,.2,M.chip,1.05,.155,-.2));
+part('Inserting NVMe solid-state drive',g,[4,2,1]);
+g=new THREE.Group();const fan=new THREE.Mesh(new THREE.CylinderGeometry(.32,.32,.05,32),M.black);fan.position.set(-.9,.15,-.5);g.add(fan);
+for(let i=0;i<9;i++){const b=box(.22,.02,.06,M.aluD,-.9+Math.cos(i*.7)*.18,.18,-.5+Math.sin(i*.7)*.18);b.rotation.y=-i*.7;g.add(b);}
+g.add(box(1.6,.03,.1,M.gold,-.1,.15,-.5));
+part('Fitting cooling fan & copper heat-pipe',g,[-4,2,0]);
+const deck=new THREE.Group();deck.add(rbox(W,D,H,.14,M.alu));
+const tp=rbox(1.1,.72,.004,.04,M.pad,.002);tp.position.set(0,H,.62);deck.add(tp);
+const keys=new THREE.InstancedMesh(new THREE.BoxGeometry(.18,.045,.17),M.key,70);let n=0;const mt=new THREE.Matrix4();
+for(let r=0;r<5;r++)for(let c=0;c<14;c++){mt.setPosition(-1.29+c*.198,H+.022,-.88+r*.2);keys.setMatrixAt(n++,mt);}
+keys.castShadow=true;deck.add(keys);deck.add(box(1.1,.045,.17,M.key,0,H+.022,.12));
+part('Closing top case — keyboard, trackpad & speakers',deck,[0,4,0],2);
+const piv=new THREE.Group();piv.position.set(0,H,-D/2+.05);
+const hg=new THREE.Mesh(new THREE.CylinderGeometry(.06,.06,2.6,24),M.aluD);hg.rotation.z=Math.PI/2;piv.add(hg);
+const lid=new THREE.Group();const back=rbox(W,2.1,.06,.1,M.alu);back.rotation.x=Math.PI/2;back.position.set(0,1.05,0);lid.add(back);
+const bezel=new THREE.Mesh(new THREE.PlaneGeometry(W-.1,2.0),M.black);bezel.position.set(0,1.05,.062);lid.add(bezel);
+
+/* ---- screen: typewriter canvas ---- */
+const sc=document.createElement('canvas');sc.width=1280;sc.height=800;const x=sc.getContext('2d');
+const wall=document.createElement('canvas');wall.width=1280;wall.height=800;{const w=wall.getContext('2d');
+ const gr=w.createLinearGradient(0,0,1280,800);gr.addColorStop(0,'#08080a');gr.addColorStop(1,'#25252b');w.fillStyle=gr;w.fillRect(0,0,1280,800);
+ w.strokeStyle='rgba(255,255,255,.1)';for(let i=0;i<40;i++){w.beginPath();for(let j=0;j<=1280;j+=16)w.lineTo(j,520+Math.sin(j*.01+i*.3)*40+i*7);w.stroke();}}
+x.fillStyle='#000';x.fillRect(0,0,1280,800);
+const stex=new THREE.CanvasTexture(sc);stex.encoding=THREE.sRGBEncoding;stex.anisotropy=8;
+const scr=new THREE.Mesh(new THREE.PlaneGeometry(W-.28,1.84),new THREE.MeshBasicMaterial({map:stex,toneMapped:false}));scr.position.set(0,1.03,.0635);lid.add(scr);
+const cam=new THREE.Mesh(new THREE.CircleGeometry(.025,16),new THREE.MeshBasicMaterial({color:0x1a2a44}));cam.position.set(0,2.0,.0645);lid.add(cam);
+const logo=new THREE.Mesh(new THREE.CircleGeometry(.12,32),new THREE.MeshStandardMaterial({color:0x888888,metalness:1,roughness:.15,emissive:0x555555}));logo.rotation.y=Math.PI;logo.position.set(0,1.05,-.002);lid.add(logo);
+lid.rotation.x=-.3;piv.add(lid);part('Fastening hinge & display panel',piv,[0,2,-4],2.2);
+
+const intro1="Hi Welcome,\nThis is Harshil's Portfolio.\nClick Enter",intro2="HARSHIL\nWELCOMES YOU\nScroll down ↓";
+const mono='52px "Space Mono","Courier New",monospace',big='800 90px Orbitron,Arial,sans-serif';
+const ST=[[{f:'700 '+mono,c:'#fff',a:'left',y:280,h:44},{f:'700 '+mono,c:'#fff',a:'left',y:380,h:44},{f:'700 '+mono,c:'#9aa0aa',a:'left',y:480,h:44}],
+ [{f:big,c:'#fff',a:'center',y:340,h:78},{f:big,c:'#fff',a:'center',y:470,h:78},{f:'400 36px "Space Mono",monospace',c:'#bbb',a:'center',y:640,h:30}]];
+['700 52px "Space Mono"','800 90px Orbitron','400 36px "Space Mono"'].forEach(f=>document.fonts&&document.fonts.load(f));
+function drawScreen(){x.drawImage(wall,0,0);const ls=txt.slice(0,Math.floor(typed)).split('\n'),st=ST[stage>=3?1:0];
+ ls.forEach((l,i)=>{const s=st[i];x.font=s.f;x.fillStyle=s.c;x.textAlign=s.a;x.fillText(l,s.a==='center'?640:90,s.y);});
+ if(Math.floor(now*2)%2===0){const i=ls.length-1,s=st[i],w=x.measureText(ls[i]).width;x.fillStyle='#fff';x.fillRect(s.a==='center'?640+w/2+8:90+w+6,s.y-s.h,s.a==='center'?18:22,s.h);}
+ stex.needsUpdate=true;}
+
+/* ---- timeline: ~15 s intro ---- */
+const GAP=1.55,T_TOTAL=15,ease=t=>1-Math.pow(1-t,3),LT=$('#lt'),BAR=$('#bar i');
+function layout(){const w=innerWidth,h=innerHeight;R.setPixelRatio(Math.min(devicePixelRatio,2));R.setSize(w,h,false);C.aspect=w/h;C.updateProjectionMatrix();
+ bgR.setPixelRatio(Math.min(devicePixelRatio,1.5));bgR.setSize(w,h,false);bgC.aspect=w/h;bgC.updateProjectionMatrix();}
+addEventListener('resize',layout);layout();
+function enterHome(){if(stage===5)return;stage=5;document.body.classList.remove('loading');document.body.classList.add('ready');
+ $('#loader').classList.add('done');$('#lap').style.opacity=0;scrollTo(0,0);setTimeout(()=>$('#lap').style.display='none',1000);}
+$('#skip').onclick=e=>{e.stopPropagation();enterHome();};
+
+let T0=null,last=0;const pS=new THREE.Vector3(0,2.2,7.6),lookA=new THREE.Vector3(0,.9,0),sp=new THREE.Vector3(),sn=new THREE.Vector3(),q=new THREE.Quaternion();
+function frame(ms){requestAnimationFrame(frame);const t=ms/1000,dt=Math.min(t-last,.05);last=t;now=t;wave(t);bgR.render(bgS,bgC);
+ if(stage===5)return;
+ if(T0===null)T0=t;const el=t-T0;
+ if(stage===0){parts.forEach((p,i)=>{const s=el-i*GAP;if(s<0)return;p.obj.visible=true;const k=ease(clamp(s/p.dur));
+   p.obj.position.copy(p.fin).addScaledVector(p.off,1-k);p.obj.rotation.y=(1-k)*.8*(i%2?1:-1);if(s<GAP)LT.textContent=p.name.toUpperCase()+'...';});
+  BAR.style.width=clamp(el/T_TOTAL)*100+'%';
+  if(el>parts.length*GAP+.6)LT.textContent='ASSEMBLY COMPLETE — POWERING ON...';
+  if(el>=T_TOTAL){stage=1;txt=intro1;typed=0;LT.textContent='';}}
+ if(stage===1||stage===3){typed+=dt*16;if(typed>=txt.length){typed=txt.length;if(stage===1){stage=2;LT.textContent='PRESS ENTER OR CLICK TO CONTINUE';}else{stage=4;LT.textContent='SCROLL DOWN TO ENTER';}}}
+ if(stage>=1)drawScreen();
+ /* camera: slow orbit while building -> settle front -> zoom into screen */
+ const k=ease(clamp((el-12)/3)),ang=.9-Math.min(el,15)*.05+mx*.1*(1-z),dist=mob()?11:8.5,scl=mob()?.8:1;rig.scale.setScalar(scl);
+ const pos=new THREE.Vector3(Math.sin(ang)*dist,4.5-Math.min(el,15)*.1-my*.3,Math.cos(ang)*dist).lerp(pS,k),look=lookA.clone();
+ if(stage===4){z+=(zt-z)*.08;}
+ if(z>0){const zE=z*z*(3-2*z);scr.getWorldPosition(sp);scr.getWorldQuaternion(q);sn.set(0,0,1).applyQuaternion(q);
+  pos.lerp(sp.clone().addScaledVector(sn,2.75*scl),zE);look.lerp(sp,zE);
+  if(z>.995&&zt>.99)enterHome();}
+ C.position.copy(pos);C.lookAt(look);R.render(S,C);}
+requestAnimationFrame(frame);
+</script></body></html>
